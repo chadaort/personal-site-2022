@@ -6,16 +6,15 @@ module.exports = {
 		date: '7/24/2017',
 		title: 'Snopes',
 		body: './index.md',
-		summary: 'Snopes is a fact checking company that sorts out myths and rumors on the internet. The company fights disinformation by identifying, exploring and correcting false information. My job at Snopes is managing our development efforts and I\'m hands-on, doing both front-end and back-end development.',
-		tags: [ 'media' ]
+		summary: 'Snopes is an online fact-checking company that debunks myths and rumors. The company identifies, explores, and corrects false information to combat disinformation. I manage Snopes\' development efforts and do both front-end and back-end development. In addition, I support the editorial team\'s efforts, which have had more than 15 members since the property saw traffic as high as 60 million monthly visitors. ',
+		tags: [ 'media' ],
 	},
 	meta: {
-		displayDate: 'May 2017 - Present',
 		subtitle: 'Fact Checking',
 		companyType: 'Fact Checking',
 		homePageList: true,
 		employmentTimeframe: '2017 - Present',
-		displayDate: 'Julu 2017 to Present',
+		displayDate: 'July 2017 to Present',
 		companyDesc: 'Snopes is a fact checking company that sorts out myths and rumors on the internet. The company fights disinformation by identifying, exploring and correcting false information. My job at Snopes is managing our development efforts and I\'m hands-on, doing both front-end and back-end development.',
 		position: 'Lead Developer',
 		hasSidebar: true,
@@ -27,16 +26,16 @@ module.exports = {
 			filePrefix: 'banner',
 			alt: 'Snopes banner image',
 			title: 'Snopes',
-			summary: ''
+			summary: '',
 		},
 		logo: {
 			src: 'assets/images/brands/snopes/logo',
 			sizes: [ 360 ],
-			maxWidth: '150px'
-		}
+			maxWidth: '150px',
+		},
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'company', siteMap, 3, 'random' )
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'company', siteMap, 3, 'random' ),
 	},
 	content: {
 		afterFeaturedImage: () => `
@@ -44,6 +43,6 @@ module.exports = {
 					The definitive Internet reference source for researching
 					<em>urban legends</em>, <em>folklore</em>, <em>myths</em>, <em>rumors</em> and <em>misinformation</em>.
 				</figcaption>
-			`
-	}
+			`,
+	},
 };

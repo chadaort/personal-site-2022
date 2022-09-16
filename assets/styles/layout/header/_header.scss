@@ -16,6 +16,7 @@
 	align-items: center;
 	width: 100%;
 	height: var( --header-height );
+	overflow-x: hidden;
 
 	&::after {
 		content: "";

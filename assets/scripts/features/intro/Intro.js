@@ -91,6 +91,7 @@ export default class Intro {
 		this.sceneImgs = {};
 		this.lastTime = performance.now();
 		this.timeElapsed = 0;
+		this.renderedWidth = document.documentElement.clientWidth;
 
 		// Color gradient properties.
 		this.colors = this.theme === 'dark' ? GRADIENT_COLORS.dark : GRADIENT_COLORS.light;
@@ -579,6 +580,12 @@ export default class Intro {
 		 * @returns {undefined} Void
 		 */
 		const onChange = () => {
+
+			// Prevents unexpected resize events on mobile devices.
+			if ( this.renderedWidth === document.documentElement.clientWidth ) {
+				return;
+			}
+
 			window.cancelAnimationFrame( this.animationFrame );
 			this.canvas.width = this.container.getBoundingClientRect().width;
 			this.canvas.height = this.container.getBoundingClientRect().height;
@@ -592,6 +599,7 @@ export default class Intro {
 			this.setupAssets();
 			delete this.cachedGridCanvas;
 			this.animationFrame = window.requestAnimationFrame( () => this.draw() );
+			this.renderedWidth = document.documentElement.clientWidth;
 		};
 
 		window.addEventListener( 'resize', onChange );

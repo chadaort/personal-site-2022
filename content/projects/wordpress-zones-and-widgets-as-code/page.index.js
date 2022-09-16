@@ -8,7 +8,7 @@ module.exports = {
 		date: '10/23/2019',
 		title: 'Wordpress zones and widgets as code',
 		body: './index.md',
-		summary: 'The product team needed granular control over secondary content placements on the site. Widgets can be managed from the admin panel, but the user interface doesn\'t work well when there are lots of variations across post types. Although there are plugins like Custom Sidebars, they all failed to meet our business and code quality requirements.',
+		summary: 'The product team wanted granular control over secondary content placements on the site. Widgets can be managed from the admin panel, but the user interface doesn\'t work well when there are lots of variations across post types. Although there are plugins like Custom Sidebars, they all failed to meet our business and code quality requirements.',
 		tags: [ 'website' ],
 	},
 	meta: {

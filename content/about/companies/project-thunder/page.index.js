@@ -6,8 +6,8 @@ module.exports = {
 		date: '1/8/2007',
 		title: 'Project Thunder',
 		body: './index.md',
-		summary: 'I was brought on to work with clients and help them bring their visions to life. Many of the clients were established brands or personalities that already had some type of style guide and a sense of what they visually wanted out of  an online shop.',
-		tags: ['ecommerce'],
+		summary: 'Project Thunder developed an e-commerce and CRM platform as an all-in-one solution. In the early 2000s, many brands and personalities were creating online stores and selling their products. Project Thunder provided services to create and manage online stores and customers for small and midsize businesses. ',
+		tags: [ 'ecommerce' ],
 	},
 	meta: {
 		companyType: 'Content Management System',
@@ -18,7 +18,7 @@ module.exports = {
 		position: 'Developer',
 		disableImageTreatments: true,
 		featureImage: {
-			src: `assets/images/brands/project-thunder/banner.png`,
+			src: 'assets/images/brands/project-thunder/banner.png',
 			path: 'assets/images/brands/project-thunder',
 			filePrefix: 'banner',
 			alt: 'Project Thunder banner image',
@@ -36,4 +36,4 @@ module.exports = {
 			return pageHandler.getPostsByType( 'company', siteMap, 3, 'random' );
 		},
 	},
-}
+};

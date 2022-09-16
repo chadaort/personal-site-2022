@@ -6,7 +6,7 @@ module.exports = {
 		date: '11/10/2008',
 		title: 'NCSOFT',
 		body: './index.md',
-		summary: 'I managed a team of 18 developers in 2 states and 8 properties with traffic ranging from a million monthly visitors to 60 million.',
+		summary: 'NCSOFT West has a long history of success in the online gaming industry. They have been in operation for over 20 years. In that time, they have won numerous awards and accolades. They are also one of the few publicly traded companies on the NASDAQ stock exchange. Their games include Guid Wars 2, Aion, Lineage 2, and City of Heroes, among others.',
 		tags: [ 'gaming' ],
 	},
 	meta: {
@@ -41,4 +41,4 @@ module.exports = {
 			return pageHandler.getPostsByType( 'company', siteMap, 3, 'random' );
 		},
 	},
-}
+};

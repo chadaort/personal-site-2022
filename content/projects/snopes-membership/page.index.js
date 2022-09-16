@@ -12,7 +12,7 @@ module.exports = {
 		tags: [ 'membership' ],
 	},
 	meta: {
-		subtitle: 'SSO',
+		subtitle: 'Single Sign-On',
 		homePageList: true,
 		projectPosition: 'lead developer',
 		thumb: `assets/images/content/${ assetNamespace }/thumb`,
