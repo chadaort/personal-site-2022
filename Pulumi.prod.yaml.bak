@@ -1,7 +1,0 @@
-config:
-  aws:region: us-east-1
-  pulumi:template: aws-javascript
-  app:env: production
-  site:apiVersion: v1
-  site:env: prod
-  site:nakedDomain: chadort.com
