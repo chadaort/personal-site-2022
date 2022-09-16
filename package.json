@@ -32,7 +32,7 @@
 		"stack:local": "NODE_ENV=local nodemon --exec babel-node --config-file ./babel.config.server.js stack/local/",
 		"stack:local:debug": "NODE_ENV=local nodemon --inspect --exec babel-node --config-file ./babel.config.server.js stack/local/",
 		"stack:staging": "NODE_ENV=staging pulumi up --stack chadort",
-		"stack:prod": "NODE_ENV=prod pulumi up --stack prod --skip-preview",
+		"stack:prod": "pulumi up --stack prod --skip-preview",
 		"deploy:staging": "yarn site:staging && yarn stack:staging",
 		"deploy:prod": "yarn site:prod && yarn stack:prod",
 		"lint": "yarn lint:styles && yarn lint:scripts",
