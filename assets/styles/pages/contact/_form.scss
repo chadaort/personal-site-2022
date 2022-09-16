@@ -1,0 +1,106 @@
+//
+// Contact page form element.
+//
+
+.contact-form {
+	margin: 0 auto;
+	padding: 2rem 1.5rem 0;
+	max-width: 650px;
+}
+
+.contact-form__name,
+.contact-form__email,
+.contact-form__message {
+	margin-bottom: 1em;
+	padding: 2px 1.2em;
+	display: block;
+	width: 100%;
+	color: #555;
+	font-size: var( --font__scale-0 );
+	line-height: 1.9;
+	border: 2px solid #fff;
+	border-radius: 1rem;
+}
+
+.contact-form__message {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	min-height: 10rem;
+}
+
+.contact-form__name:focus,
+.contact-form__name:focus-visible,
+.contact-form__email:focus,
+.contact-form__email:focus-visible,
+.contact-form__message:focus,
+.contact-form__message:focus-visible {
+	outline: none;
+	border: 2px solid $color__primary;
+}
+
+.contact-form__name::placeholder,
+.contact-form__email::placeholder,
+.contact-form__message::placeholder {
+	color: #999;
+}
+
+.contact-form__accepted-terms-label {
+	margin: 0.3em 0 0 0.4em;
+	color: $color__primary-dark;
+	font-size: var( --font__scale--1 );
+	font-weight: 500;
+}
+
+.contact-form__accepted-terms-anchor {
+	color: var( --color__text-summary );
+
+	&:hover {
+		color: $color__secondary-dark;
+	}
+}
+
+.contact-form__accepted-terms {
+	margin: 0 0 0 0.8em;
+	padding: 0.6em;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	background-color: #fff;
+	opacity: 0.85;
+	-webkit-appearance: none;
+
+	&:checked {
+		opacity: 0.9;
+		background-color: var( --color__secondary );
+	}
+
+	&:active,
+	&:checked:active {
+		opacity: 1;
+	}
+}
+
+.contact-form__submit {
+	margin-top: 1.6rem;
+	padding: 0.3rem 0;
+	font-size: var( --font__scale-0 );
+	font-weight: 600;
+	text-transform: uppercase;
+	background: var( --color__secondary );
+	border-radius: 1rem;
+
+	&:disabled {
+		color: rgba( $color__white-f, 0.8 );
+		background: var( --color__accent-primary );
+		filter: brightness( 95% );
+	}
+
+	&:hover {
+		background: var( --color__secondary );
+	}
+
+	body[data-theme="dark"] &:disabled {
+		color: rgba( $color__white-f, 0.35 );
+		filter: brightness( 90% );
+	}
+}

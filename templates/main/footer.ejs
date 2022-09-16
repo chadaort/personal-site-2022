@@ -1,0 +1,23 @@
+<footer class="footer">
+
+	<nav class="footer__menu">
+		<%- include( '../partials/nav-main' ) %>
+	</nav>
+
+	<div class="footer__disclosure">
+		<p class="footer__disclosure-copy">All work is copyright of its respective owner.</p>
+	</div>
+
+	<ul class="footer__legal">
+		<li class="footer__legal-item">
+			<a class="footer__legal-link" href="<%= `${ templateData.site.core.siteUrl }/legal/privacy-policy/` %>">Privacy Policy</a>
+		</li>
+		<li class="footer__legal-item">
+			<a class="footer__legal-link" href="<%= `${ templateData.site.core.siteUrl }/legal/terms-of-service/` %>">Terms of Service</a>
+		</li>
+		<li class="footer__legal-item">
+			<a class="footer__legal-link" href="<%= `${ templateData.site.core.siteUrl }/legal/cookie-policy/` %>">Cookie Policy</a>
+		</li>
+	</ul>
+
+</footer>

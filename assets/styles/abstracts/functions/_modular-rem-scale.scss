@@ -1,0 +1,20 @@
+/// Returns the rem size based on the modular rem scale.
+///
+/// @param {Number} $position The size based on position within the modular scale.
+/// @param {Number} $base-size The base size to apply to the scale.
+/// @param {Number} $root-size The font-size applied to the html tag.
+/// @param {Number} $type-scale Modular font scale.
+/// @param {Number} $pixel-increment Pixel increment between sizes.
+/// @return {Number} Size in rems.
+@function modular-rem-scale(
+	$position: 0,
+	$base-size: 16px,
+	$root-size: 16px,
+	$type-scale: 1.25,
+	$pixel-increment: 6.25
+) {
+	$difference: strip-unit( $base-size ) - strip-unit( $root-size );
+	$base-size-adjustment: ( ( $difference * $pixel-increment ) + 100 ) / 100;
+
+	@return ( poly-pow( $type-scale, $position ) * $base-size-adjustment )+rem;
+}

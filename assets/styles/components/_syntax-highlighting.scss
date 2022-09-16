@@ -1,0 +1,212 @@
+/**
+  * Syntax highlighting for inline and code blocks.
+  */
+
+code:not( [ class ] ),
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: "Source Code Pro", "Courier New", monospace;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: var( --color__syntax-base );
+	font-size: var( --font__scale--1 );
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	background: none;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"] {
+	border: 1px solid var( --color__syntax-border );
+	border-radius: 5px;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+	background: var( --color__syntax-select );
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+	background: var( --color__syntax-select );
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+
+// Inline styles.
+code:not( [ class ] ),
+:not(pre) > code[class*="language-"] {
+	padding: 0.1em 0.3em;
+	font-size: .9em;
+	white-space: normal;
+	background: var( --color__syntax-inline );
+	border-radius: 0;
+}
+
+code:not( [ class ] ) {
+	color: var( --color__syntax-plain );
+	background: var( --color__syntax-inline );
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var( --color__syntax-comment );
+}
+
+.token.punctuation {
+	color: var( --color__syntax-base );
+}
+
+.token.delimiter.important,
+.token.selector .parent,
+.token.tag,
+.token.tag .token.punctuation {
+	color: var( --color__syntax-punctuation );
+}
+
+.token.attr-name,
+.token.boolean,
+.token.boolean.important,
+.token.number,
+.token.constant,
+.token.selector .token.attribute {
+	color: var( --color__syntax-constant );
+}
+
+.token.class-name,
+.token.key,
+.token.parameter,
+.token.property,
+.token.property-access,
+.token.variable {
+	color: var( --color__syntax-variable );
+}
+
+.token.attr-value,
+.token.inserted,
+.token.color,
+.token.selector .token.value,
+.token.string,
+.token.string .token.url-link {
+	color: var( --color__syntax-attr );
+}
+
+.token.builtin,
+.token.keyword-array,
+.token.package,
+.token.regex {
+	color: var( --color__syntax-regex );
+}
+
+.token.function,
+.token.selector .token.class,
+.token.selector .token.id {
+	color: var( --color__syntax-func );
+}
+
+.token.atrule .token.rule,
+.token.combinator,
+.token.keyword,
+.token.operator,
+.token.pseudo-class,
+.token.pseudo-element,
+.token.selector,
+.token.unit {
+	color: var( --color__syntax-operator );
+}
+
+.token.deleted,
+.token.important {
+	color: var( --color__syntax-important );
+}
+
+.token.keyword-this,
+.token.this {
+	color: var( --color__syntax-variable );
+}
+
+.token.important,
+.token.keyword-this,
+.token.this,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.delimiter.important {
+	font-weight: inherit;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.language-markdown .token.title,
+.language-markdown .token.title .token.punctuation {
+	color: var( --color__syntax-variable );
+	font-weight: bold;
+}
+
+.language-markdown .token.blockquote.punctuation {
+	color: var( --color__syntax-regex );
+}
+
+.language-markdown .token.code {
+	color: var( --color__syntax-punctuation );
+}
+
+.language-markdown .token.hr.punctuation {
+	color: var( --color__syntax-variable );
+}
+
+.language-markdown .token.url > .token.content {
+	color: var( --color__syntax-attr );
+}
+
+.language-markdown .token.url-link {
+	color: var( --color__syntax-constant );
+}
+
+.language-markdown .token.list.punctuation {
+	color: var( --color__syntax-regex );
+}
+
+.language-markdown .token.table-header {
+	color: var( --color__syntax-base );
+}
+
+.language-json .token.operator {
+	color: var( --color__syntax-base );
+}
+
+.language-scss .token.variable {
+	color: var( --color__syntax-punctuation );
+}

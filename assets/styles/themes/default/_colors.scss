@@ -1,0 +1,61 @@
+//
+// Default color variables.
+//
+
+/* stylelint-disable declaration-colon-space-after */
+:root {
+
+	// Palette
+	--color__primary:             #{ $color__primary };
+	--color__primary-light:       #{ $color__primary-light };
+	--color__primary-dark:        #{ $color__primary-dark };
+	--color__primary-text:        #{ $color__primary-text };
+	--color__primary-text-dark:   #{ $color__primary-text-dark };
+	--color__secondary:           #{ $color__secondary };
+	--color__secondary-light:     #{ $color__secondary-light };
+	--color__secondary-dark:      #{ $color__secondary-dark };
+	--color__secondary-text:      #{ $color__secondary-text };
+	--color__secondary-text-dark: #{ $color__secondary-text-dark };
+	--color__tertiary:            #{ $color__tertiary };
+
+	// Logo
+	--color__logo-symbol: #222;
+	--color__logo-text:   #000;
+
+	// Lines
+	--color__line-primary:   #{ $color__white-c };
+	--color__line-secondary: #{ $color__white-d };
+	--color__line-tertiary:  #{ $color__white-e };
+
+	// Backgrounds
+	--color__bg-primary:   #{ $color__white-f };
+	--color__bg-secondary: #{ $color__primary };
+	--color__bg-tertiary:  #{ $color__white-d };
+
+	// Accents
+	--color__accent-primary: #{ $color__primary-light };
+
+	// Typography
+	--color__text-title-primary:   #{ $color__black-1 };
+	--color__text-title-secondary: #{ $color__black-3 };
+	--color__text-body:            #{ $color__black-4 };
+	--color__text-summary:         #{ $color__black-2 };
+	--color__text-muted:           #{ $color__black-5 };
+
+	// Syntax highlighting
+	--color__syntax-base:        #111b27;
+	--color__syntax-select:      #8da1b9;
+	--color__syntax-inline:      #e9e9e9;
+	--color__syntax-border:      #ccc;
+	--color__syntax-plain:       #ff7e00;
+	--color__syntax-comment:     #3c526d;
+	--color__syntax-punctuation: #006d6d;
+	--color__syntax-constant:    #755f00;
+	--color__syntax-variable:    #005a8e;
+	--color__syntax-regex:       #af00af;
+	--color__syntax-attr:        #116b00;
+	--color__syntax-func:        #7c00aa;
+	--color__syntax-operator:    #a04900;
+	--color__syntax-important:   #c22f2e;
+}
+/* stylelint-enable declaration-colon-space-after */

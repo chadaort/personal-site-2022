@@ -1,0 +1,215 @@
+//
+// Home page hero element.
+//
+
+.hero-intro {
+	position: relative;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.hero-intro,
+.hero-intro__wrapper {
+	height: 100vh;
+
+	@include media-query( $start: desktop ) {
+		height: calc( 100vh - #{ $utility-bar-height } );
+	}
+}
+
+[data-theme="dark"] .hero-intro {
+	background-color: #222;
+}
+
+.intro-grid {
+	position: absolute;
+	top: 0;
+}
+
+.hero-intro__wrapper {
+	@extend %site-frame-wrapper;
+}
+
+.hero-intro__line {
+	margin-bottom: 0.7rem;
+	display: block;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.hero-intro__no-break {
+	white-space: nowrap;
+}
+
+.hero-intro__title {
+	margin: 0;
+	position: relative;
+	font-family: $typography__font-base;
+	font-size: modular-rem-scale( 1.05 );
+	font-weight: 300;
+	line-height: 1.75em;
+	color: #333;
+	text-align: center;
+
+	[data-theme="dark"] & {
+		color: #fff;
+	}
+
+	@include media-query( $start: tablet ) {
+		font-size: modular-rem-scale( 1.5 );
+	}
+
+	@include media-query( $start: desktop ) {
+		font-size: modular-rem-scale( 2.25 );
+		//line-height: 1.35;
+		text-align: left;
+
+		[data-theme="dark"] &::after {
+			left: -7%;
+			width: 70%;
+		}
+	}
+
+	.hero-intro__first-word {
+		color: #444;
+		font-size: 1.35em;
+		font-weight: 400;
+
+		[data-theme="dark"] & {
+			color: #fff;
+		}
+	}
+
+	.hero-intro__name {
+		font-size: 1.9em;
+		font-weight: 400;
+	}
+
+	.hero-intro__industry {
+		color: var( --color__secondary-text );
+		font-size: 1.35em;
+		font-weight: 400;
+
+		&:hover {
+			color: #000;
+
+			[data-theme="dark"] & {
+				color: #fff;
+			}
+		}
+	}
+
+	.hero-intro__link {
+		color: #333;
+		font-size: 1.15em;
+		font-weight: 400;
+
+		[data-theme="dark"] & {
+			color: #fff;
+		}
+
+		&:hover {
+			color: var( --color__secondary-text );
+		}
+	}
+}
+
+.featured-companies__company {
+	font-weight: 600;
+}
+
+.hero-intro__cta {
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.hero-intro__cta-a {
+	@extend %btn--outline-secondary-large;
+	margin: 0 auto;
+	position: relative;
+	z-index: 5;
+	color: $color__white-d;
+	border-color: $color__white-d;
+
+	&:hover {
+		background-color: $color-dark-bg__secondary;
+		border-color: $color-dark-bg__secondary;
+	}
+}
+
+.hero-intro__copy-bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.95;
+	z-index: 1;
+
+	@include media-query( $start: 650px ) {
+		width: 90%;
+		left: 5%;
+	}
+
+	@include media-query( $start: 1200px ) {
+		width: 80%;
+		left: 10%;
+	}
+
+	@include media-query( $start: 1300px ) {
+		width: 75%;
+		left: 12.5%;
+	}
+
+	@include media-query( $start: 1450px ) {
+		width: 75%;
+		left: 12.5%;
+	}
+}
+
+.hero-intro__copy-bg-img,
+.hero-intro__copy-bg-img--dark {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.hero-intro__copy-bg-img--dark {
+	display: none;
+}
+
+[data-theme="dark"] .hero-intro__copy-bg-img {
+	display: none;
+}
+
+[data-theme="dark"] .hero-intro__copy-bg-img--dark {
+	display: block;
+}
+
+.hero-intro__copy {
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	z-index: 3;
+	color: $color__white-f;
+
+	@include media-query( $start: tablet ) {
+		width: 80%;
+	}
+
+	@include media-query( $start: desktop ) {
+		width: 65%;
+	}
+}

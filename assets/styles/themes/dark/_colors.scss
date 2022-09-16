@@ -1,0 +1,55 @@
+//
+// Dark theme color variables.
+//
+
+/* stylelint-disable declaration-colon-space-after */
+body[data-theme="dark"],
+.has-dark-bg {
+
+	// Logo
+	--color__logo-symbol: #fff;
+	--color__logo-text: #fff;
+
+	// Lines
+	--color__line-primary:   #{ $color__black-5 };
+	--color__line-secondary: #{ $color__black-4 };
+	--color__line-tertiary:  #{ $color__black-3 };
+
+	// Backgrounds
+	--color__bg-primary:   #{ $color__black-2 };
+	--color__bg-secondary: #{ $color__black-3 };
+	--color__bg-tertiary:  #{ $color__black-3 };
+
+	// Accents
+	--color__accent-primary: #{ $color__black-4 };
+
+	// Typography
+	--color__text-title-primary: #fff;
+	--color__text-title-secondary: #{ $color__white-d };
+	--color__text-body:            #{ $color__white-e };
+	--color__text-summary:         #{ $color__white-c };
+	--color__text-muted:           #{ $color__white-c };
+
+	--color__primary:      #66b9a9;
+	--color__primary-text: #69cab5;
+
+	--color__secondary: #eb5668;
+	--color__secondary-text: #eb5c6c;
+
+	// Syntax highlighting
+	--color__syntax-base:        #c7d8ed;
+	--color__syntax-select:      #d6dde5;
+	--color__syntax-inline:      #555;
+	--color__syntax-border:      #3c3c3c;
+	--color__syntax-plain:       #ff9f42;
+	--color__syntax-comment:     #6487b2;
+	--color__syntax-punctuation: #00d3d3;
+	--color__syntax-constant:    #e0b600;
+	--color__syntax-variable:    #00a2ff;
+	--color__syntax-regex:       #ff00ff;
+	--color__syntax-attr:        #23df00;
+	--color__syntax-func:        #c21fff;
+	--color__syntax-operator:    #ff7502;
+	--color__syntax-important:   #ff5857;
+}
+/* stylelint-enable declaration-colon-space-after */

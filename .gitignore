@@ -1,0 +1,10 @@
+/dist/
+Pulumi.*.yaml
+/node_modules/
+*error.log
+*.testing.*
+yarn-error.log
+/assets/asset-manifest.json
+/_asset-sources/
+.DS_Store
+*.bckp

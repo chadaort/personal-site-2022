@@ -1,0 +1,13 @@
+<% if ( templateData.site.core.env === 'local' ) { %>
+	<script type="text/javascript" src="<%= templateData.assets.manifest['main.js'] %>"></script>
+<% } %>
+
+<% if ( templateData.site.core.env === 'prod' ) { %>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2YDSMR1TZ"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-H2YDSMR1TZ');
+	</script>
+<% } %>

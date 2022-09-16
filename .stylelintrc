@@ -1,0 +1,8 @@
+{
+  "extends": "@humanmade/stylelint-config",
+  "rules": {
+	"declaration-property-unit-whitelist": {
+		"line-height": [ "em" ]
+	}
+  }
+}

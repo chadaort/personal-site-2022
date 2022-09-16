@@ -1,0 +1,25 @@
+.is-404 .page-heading {
+	display: none;
+}
+
+.page-404 {
+	margin: 5rem 0;
+	text-align: center;
+}
+
+.page-404__title {
+	margin: -.12em 0 0;
+	color: var( --color__secondary );
+	font-size: 10rem;
+	font-weight: 900;
+	line-height: 1;
+}
+
+.page-404__subhead {
+	margin: 0 0 0 3.5rem;
+	color: var( --color__primary );
+	color: #555;
+	font-size: var( --font__scale-2);
+    font-weight: 500;
+	text-transform: uppercase;
+}

@@ -1,0 +1,31 @@
+const pageHandler = require( '../../../inc/page' );
+
+const assetNamespace = 'slack-app';
+
+module.exports = {
+	post: {
+		type: 'project',
+		date: '05/05/2022',
+		title: 'Slack Application',
+		body: './index.md',
+		summary: 'Snopes publishes wire content from the Associated Press. It can be difficult to find articles since we don\'t have licenses for all articles, and from their website, it isn\'t clear which articles we have a license for. We created a Slack channel for each feed type that we want to monitor, and I created a Slack application to poll the feeds and update each channel when there is an update.',
+		tags: [ 'application' ],
+	},
+	meta: {
+		subtitle: 'Snopes.com',
+		homePageList: true,
+		projectPosition: 'lead developer',
+		hasSidebar: true,
+		disableImageTreatments: true,
+		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		featureImage: {
+			src: `assets/images/content/${ assetNamespace }/banner`,
+			path: `assets/images/content/${ assetNamespace }`,
+			filePrefix: 'banner',
+			alt: 'Slack Application banner',
+		},
+	},
+	filters: {
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 3, 'random' ),
+	},
+};

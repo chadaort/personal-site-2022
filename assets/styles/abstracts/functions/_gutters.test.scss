@@ -1,0 +1,10 @@
+@import "true";
+@import "../variables/layout";
+@import "./gutters";
+
+@include describe( 'gutter() SCSS function.' ) {
+	@include it( 'Should return a Number' ) {
+		@include assert-equal( gutter( frame ), 20px );
+		@include assert-equal( gutter( frame, desktop ), 30px );
+	}
+}

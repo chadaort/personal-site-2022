@@ -1,0 +1,6 @@
+name: chadort-site
+description: The personal website of Chad Ort.
+runtime:
+    name: nodejs
+    options:
+        typescript: false

@@ -1,0 +1,10 @@
+@import "true";
+@import "./strip-unit";
+
+@include describe( 'strip-unit() SCSS function.' ) {
+	@include it( 'Should return number units as just the number.' ) {
+		@include assert-equal( strip-unit( 20px ), 20 );
+		@include assert-equal( strip-unit( 20em ), 20 );
+		@include assert-equal( strip-unit( 20rem ), 20 );
+	}
+}
