@@ -586,7 +586,7 @@ export default class Intro {
 			// Measuring the height to ensure that the resize event fires when dev tools is open/closed.
 			if (
 				this.renderedDimensions.width === document.documentElement.clientWidth
-				|| Math.abs( this.renderedDimensions.height - document.documentElement.clientWidth ) < 100
+				&& Math.abs( this.renderedDimensions.height - document.documentElement.clientHeight ) < 100
 			) {
 				return;
 			}
