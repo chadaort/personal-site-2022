@@ -8,7 +8,7 @@ module.exports = {
 		date: '10/28/2012',
 		title: 'Guild Wars 2',
 		body: './index.md',
-		summary: 'Due to Guild Wars\' popularity, Guild Wars 2 received a lot of hype before its release. ArenaNet had more autonomy than our other studios, so we usually supported them rather than fully managing their projects.',
+		summary: 'Due to Guild Wars\' popularity, Guild Wars 2 received a lot of hype before its release. ArenaNet had more autonomy than our other studios, so we usually supported them rather than fully managing their projects. They had decided to use WordPress for content publishing, and at that time, our servers team was adamant that we build static sites for marketing material.',
 		tags: [ 'website' ],
 	},
 	meta: {

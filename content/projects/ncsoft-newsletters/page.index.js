@@ -8,7 +8,7 @@ module.exports = {
 		date: '03/01/2010',
 		title: 'NCSOFT newsletters',
 		body: './index.md',
-		summary: 'As the publisher, NCSOFT, managed all the newsletters for any current and upcoming games. Some games had multiple newsletters with varying frequencies and they all had a heavy design.',
+		summary: 'As the publisher, NCSOFT managed all the newsletters for any current and upcoming games. Some games had multiple newsletters with varying frequencies and had a reasonably heavy design. Newsletter development at that time was messy. Outlook used Word to render their emails, and Yahoo had its quirks.',
 		tags: [ 'website' ],
 	},
 	meta: {

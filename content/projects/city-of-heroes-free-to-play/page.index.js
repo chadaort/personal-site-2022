@@ -8,7 +8,7 @@ module.exports = {
 		date: '05/31/2012',
 		title: 'City of Heroes',
 		body: './index.md',
-		summary: 'When free-to-play came to the market, existing MMO and other game genres started having some serious discussions about what changes needed to be made.',
+		summary: 'MMOs and other game genres started having challenging discussions when free-to-play came to the market to decide if they would move to a free-to-play model with micro-transactions. With City of Heroes on its last legs, it was clear it would need to convert to a free-to-play model to stay competitive. Even though it did not save COH, it was a financial improvement over the monthly subscription model.',
 		tags: [ 'website' ],
 	},
 	meta: {

@@ -1,11 +1,11 @@
-When free-to-play came to the market, existing MMO and other game genres started having some serious discussions about what changes needed to be made. City of Heroes was already on its last leg, so it was apparent it needed to convert to free-to-play. It didn’t save COH but it was a financial improvement over the monthly subscription model. 
+MMOs and other game genres started having challenging discussions when [free-to-play](https://en.wikipedia.org/wiki/Free-to-play) came to the market to decide if they would move to a free-to-play model with micro-transactions. With City of Heroes on its last legs, it was clear it would need to convert to a free-to-play model to stay competitive. Even though it did not save COH, it was a financial improvement over the monthly subscription model. 
 
-As a publisher, we did a few things to marketing and game sites when the IP converted to free-to-play. 
+When the IP converted to free-to-play, we made a few changes to our marketing and game sites.
 
 - Add authentication to any marketing or game sites. 
 - Allow users to sign up for game accounts on site. 
 - Provide a micro-transaction storefront on site.
 
-Marketing sites were generated HTML pages that we deployed and web applications often lived on a subdomain. We tied in auth controls in the main chrome by reading a cookie on the client and hiding or showing a generic user menu.
+A separate development team handled the billing controls for players in Austin, TX. We had to create micro-transaction storefronts when the business model changed to free-to-play. There wasn't much interaction between the billing team and studio marketing teams, so they wanted the front-end development to move to our team (Interactive Services) rather than being managed by the billing team. To create storefronts, we worked with the billing team to create an API that exposes cart and checkout controls.
 
-In Austin, TX, a separate development team was always responsible for player billing controls. When the business model changed to free-to-player, the marketing wanted to move the storefront to the content site for micro-transactions. This and forums are how the marketing team was engaging with users. The billing team provided us with an API for creating accounts, validating fields and retrieving store items. We were responsible for managing their cart and passing users over to the billing team to checkout.  
+It was a big project, but we managed to create a user-friendly storefront while maintaining the game's aesthetic that was used on the site as well as in-game.

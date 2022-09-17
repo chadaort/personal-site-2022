@@ -8,7 +8,7 @@ module.exports = {
 		date: '10/10/2008',
 		title: 'Element gallery',
 		body: './index.md',
-		summary: 'Here\'s a fun design I found in my archive that I thought I\'d share. I made a lovely coming soon design with a chalkboard-like background, email signup, and a progress bar.',
+		summary: 'I found this fun design in my archive and thought I\'d share it. With a chalkboard-like background, email signup, and a progress bar, I created a lovely coming soon design.',
 		tags: [ 'website' ],
 	},
 	meta: {

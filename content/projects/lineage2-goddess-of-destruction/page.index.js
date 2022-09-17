@@ -8,8 +8,8 @@ module.exports = {
 		date: '05/29/2013',
 		title: 'Lineage 2 Goddess of Destruction',
 		body: './index.md',
-		summary: 'Goddess of Destruction was an expansion pack for Lineage 2. Not all expansions packs got a microsite but this one did because it was a huge update.',
-		tags: [ 'website' ]
+		summary: 'Goddess of Destruction was an expansion pack for Lineage 2. Not all expansion packs got a microsite, but this one did because it was a huge update. The development team added 30 new hunting grounds, 60 new raid bosses, and more than 400 new equipment items, making this the most significant content update in the game\'s seven-year history.',
+		tags: [ 'website' ],
 	},
 	meta: {
 		subtitle: 'Expansion microsite',
@@ -18,15 +18,13 @@ module.exports = {
 			{
 				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
 				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
-				alt: '',
-				title: '',
-				summary: ''
-			}
+				alt: 'Lineage 2 Goddess of Destruction screen',
+			},
 		],
 		projectStillActive: true,
-		projectURL: 'https://www.lineage2.com/'
+		projectURL: 'https://www.lineage2.com/',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' )
-	}
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+	},
 };

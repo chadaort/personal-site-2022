@@ -8,7 +8,7 @@ module.exports = {
 		date: '05/05/2010',
 		title: 'NCSOFT events',
 		body: './index.md',
-		summary: 'As a publisher, NCSOFT managed a lot of events. We created a dedicated event site on a subdomain of ncsoft.com that allowed the event team to showcase upcoming events with an archive of past events.',
+		summary: 'In its role as a publisher, NCSOFT managed many events every year. We created a dedicated event site on a subdomain of ncsoft.com so that the event team could promote upcoming events and maintain an archive of all past events. Additionally, our sponsors wanted prime real estate that the company couldn\'t offer on the main property.',
 		tags: [ 'website' ],
 	},
 	meta: {

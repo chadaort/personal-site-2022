@@ -8,7 +8,7 @@ module.exports = {
 		date: '03/13/2012',
 		title: 'Blade and Soul',
 		body: './index.md',
-		summary: 'Blade and Soul was developed by NCSOFT East and launched in the west about 9 after initially launching in the east. It was another beautiful game with a really rich story. My only complaint with the game has more to do with what free-to-play has done to gameplay in MMO\'s. ',
+		summary: 'Nine months after launching in the east, NCSOFT launched Blade and Soul in the west. This was another beautiful game with a vibrant story. In terms of gameplay, the only complaint I have with the game is how free-to-play has affected it. When a game was launched in the west, developed initially by NCSOFT east, a product team would be created to oversee the business plan and translate all the game content.',
 		tags: [ 'website' ],
 	},
 	meta: {

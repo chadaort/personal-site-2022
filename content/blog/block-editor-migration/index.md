@@ -1,12 +1,12 @@
-It was a fair amount of work to migrate Snopes to the block editor since they have a lot of content that was written with the classic editor. The project was too big for me to handle alone, so we hired a project manager and a couple of developers from [Human Made](https://humanmade.com/) for five, two-week sprints.
+Due to Snopes' extensive collection of content written with the classic editor, it took a lot of work to migrate their content to the block editor. Since the project was too big for me to handle alone, we contracted with [Human Made](https://humanmade.com/) for project management and development support.
 
 - Requirements gathering
 - Development planning and data modeling
 - Block development
 - Editorial documentation and training
 
-Since we were rethinking the data model, it was the perfect time to rethink how writers enter data for each of our content types. We met with several members of the editorial team to better understand their workflow and pain points with the classic editor. We had a solid understanding of what they needed after several meetings and going through the story creation process with several writers.
+Since we were revisiting the data model, this was the time to review editorial needs to understand the content fields they were using and their business purpose. We met with several editorial team members to map out their workflow and understand their pain points with the classic editor. After several meetings with the writers, we had a solid understanding of what they needed.
 
-In the [block editor](https://wordpress.org/support/article/wordpress-editor/), you get visual support out of the box so the editorial team can break their content up into columns and apply styles to elements. Having audited all our existing data fields and associated them with business needs, we were able to identify blocks as project requirements. In order to ensure that all stakeholders were satisfied, we focused development sprints on the big-ticket items with immediate editorial value.
+In the [block editor](https://wordpress.org/support/article/wordpress-editor/), you get a lot of layout support so the editorial team can break their content up into columns and apply styles to elements. Having audited all our existing data fields and associated them with business needs, we identified blocks as project requirements. Then, to ensure that all stakeholders were satisfied, we focused development sprints on the big-ticket items with immediate editorial value.
 
-The editorial team was happy with the transition and really like working with a more modern editor. 
+The editorial team was happy with the transition and liked working with a more modern editor. 

@@ -8,7 +8,7 @@ module.exports = {
 		date: '06/03/2014',
 		title: 'Wildstar launch',
 		body: './index.md',
-		summary: 'Wildstar was a fantasy/science fiction MMO game that was developed by Carbine Studios. The game and their art was incredibly beautiful. I enjoyed playing the game and absolutely loved working with their team of developers.',
+		summary: 'WildStar is a fantasy/science fiction MMO game developed by Carbine Studios. It was a pleasure to play the game, and I was blown away by the art. Game development can take a long time, and Wildstar was no exception. Free-to-play was introduced right when their game launched. It was just really inconvenient for everyone involved in the game.',
 		tags: [ 'website' ],
 	},
 	meta: {
