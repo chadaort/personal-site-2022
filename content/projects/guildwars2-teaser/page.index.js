@@ -8,7 +8,7 @@ module.exports = {
 		date: '06/01/2011',
 		title: 'Guild Wars 2 teaser',
 		body: './index.md',
-		summary: 'ArenaNet, the studio behind Guild Wars, has an incredible amount of passion for their game with some of the most loyal players. There was so much hype about the release of Guild Wars 2 in 2012 that it was probably the best time to work for NCSOFT. ',
+		summary: 'ArenaNet, the studio behind Guild Wars, has some of the most loyal players on the market. So the release of Guild Wars 2 in 2012 was such an exciting time to work for NCSOFT. Daniel Dociu was the art director at ArenaNet who had the creative vision behind Guild Wars 2. The work he produces is stunning, and his management style fosters an environment where artists can flourish. This resulted in impressive art and a beautiful game. You can see his work here.',
 		tags: [ 'website' ],
 	},
 	meta: {
