@@ -91,7 +91,10 @@ export default class Intro {
 		this.sceneImgs = {};
 		this.lastTime = performance.now();
 		this.timeElapsed = 0;
-		this.renderedWidth = document.documentElement.clientWidth;
+		this.renderedDimensions = {
+			width: document.documentElement.clientWidth,
+			height: document.documentElement.clientHeight,
+		};
 
 		// Color gradient properties.
 		this.colors = this.theme === 'dark' ? GRADIENT_COLORS.dark : GRADIENT_COLORS.light;
@@ -529,7 +532,6 @@ export default class Intro {
 		if ( this.sceneImgs.topLeftMask && this.sceneImgs.topLeftMask.img && this.sceneImgs.bottomRightMask && this.sceneImgs.bottomRightMask.img ) {
 			const defaultCompOp = this.ctx.globalCompositeOperation;
 
-			//if ( this.theme === 'light' ) {
 			const topLeftMask = this.sceneImgs.topLeftMask.img;
 			const topLeftWidthPercent = this.deviceSize === 'mobile' ? 100 : 80;
 			const topLeftMaskWidth = ( topLeftWidthPercent / 100 ) * this.canvas.width;
@@ -555,7 +557,6 @@ export default class Intro {
 			);
 
 			this.ctx.globalCompositeOperation = 'source-in';
-			//}
 
 			this.ctx.drawImage( this.gridCanvas, 0, 0 );
 
@@ -582,7 +583,11 @@ export default class Intro {
 		const onChange = () => {
 
 			// Prevents unexpected resize events on mobile devices.
-			if ( this.renderedWidth === document.documentElement.clientWidth ) {
+			// Measuring the height to ensure that the resize event fires when dev tools is open/closed.
+			if (
+				this.renderedDimensions.width === document.documentElement.clientWidth
+				|| Math.abs( this.renderedDimensions.height - document.documentElement.clientWidth ) < 100
+			) {
 				return;
 			}
 
@@ -599,7 +604,8 @@ export default class Intro {
 			this.setupAssets();
 			delete this.cachedGridCanvas;
 			this.animationFrame = window.requestAnimationFrame( () => this.draw() );
-			this.renderedWidth = document.documentElement.clientWidth;
+			this.renderedDimensions.width = document.documentElement.clientWidth;
+			this.renderedDimensions.height = document.documentElement.clientHeight;
 		};
 
 		window.addEventListener( 'resize', onChange );
