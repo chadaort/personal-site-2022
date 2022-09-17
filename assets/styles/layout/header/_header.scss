@@ -80,7 +80,6 @@
 	display: inline-block;
 	height: inherit;
 	max-height: 100%;
-	width: 50%;
 	z-index: 11;
 
 	@include media-query( $start: desktop ) {

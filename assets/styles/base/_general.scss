@@ -6,9 +6,13 @@
 *::before,
 *::after { box-sizing: border-box }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
-	overflow-x: hidden;
 	background-color: var( --color__bg-primary );
 
 	&[data-theme="dark"].is-home {
