@@ -8,7 +8,7 @@ module.exports = {
 		date: '07/16/2010',
 		title: 'NCSOFT forums',
 		body: './index.md',
-		summary: 'NCSOFT provided community forums for most all games using Vbulletin. Each game had their own community team that would moderate and engage with players.',
+		summary: 'NCSOFT provided community forums for most of its games using Vbulletin and had community teams for each game that moderated and engaged with players. Community managers are often hired from within the game community and are already super active.',
 		tags: [ 'website' ],
 	},
 	meta: {
