@@ -3,7 +3,7 @@
 	<% sitemap.forEach( page => { %>
 		<url>
 			<loc><%= config.siteUrl %>/<%= page.uri %></loc>
-			<lastmod><%= new Date( page.modifiedDate ).toString() %></lastmod>
+			<lastmod><%= new Date( page.modifiedDate ).toLocaleDateString( 'fr-CA' ) %></lastmod>
 		</url>
 	<% } ) %>
 </urlset>
