@@ -7,7 +7,7 @@ module.exports = {
 		title: 'About Me',
 		body: './index.md',
 		summary: '',
-		tags: [ 'website' ]
+		tags: [ 'website' ],
 	},
 	meta: {
 		subtitle: 'Application Developer',
@@ -15,12 +15,12 @@ module.exports = {
 		hasSidebar: false,
 		headerTitle: 'About Me',
 		headerSubtitle: 'Just some history',
-		pageTitle: 'A little bit about myself'
+		pageTitle: 'A little bit about myself',
 	},
 	filters: {
 		contentData: ( data, siteMap ) => {
 			data.companies = pageHandler.getPostsByType( 'company', siteMap );
 			return data;
-		}
-	}
+		},
+	},
 };

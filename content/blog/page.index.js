@@ -3,11 +3,11 @@ const pageHandler = require( '../../inc/page.js' );
 module.exports = {
 	post: {
 		type: 'blog-posts',
-		date: '01/01/2018',
+		date: '09/18/2022',
 		title: 'About Me',
 		body: './index.md',
-		summary: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-		tags: ['website'],
+		summary: '',
+		tags: [ 'website' ],
 	},
 	meta: {
 		subtitle: 'Originally a cat guy',
