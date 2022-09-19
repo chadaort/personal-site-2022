@@ -120,6 +120,11 @@
 			border: 1px solid #ddd;
 		}
 
+		body[data-theme="dark"] & img {
+			background-color: #282828;
+			border-color: var(--color__line-tertiary);
+		}
+
 		img.img--no-border {
 			padding: 0;
 			border: none;

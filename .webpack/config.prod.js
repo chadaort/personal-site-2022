@@ -65,7 +65,7 @@ module.exports = function() {
 
 					new XMLWebpackPlugin( {
 						files: [ {
-							template: path.join( process.cwd(), 'sitemap.ejs' ),
+							template: path.join( process.cwd(), 'templates/sitemap.ejs' ),
 							filename: 'sitemap.xml',
 							data: {
 								sitemap,
@@ -94,7 +94,7 @@ module.exports = function() {
 								to: '',
 							},
 							{
-								from: path.join( process.cwd(), 'robots.txt' ),
+								from: path.join( process.cwd(), 'templates/robots.txt' ),
 								to: '',
 							},
 						],
@@ -134,7 +134,7 @@ module.exports = function() {
 									options: { cacheDirectory: true }
 								},
 								{
-									test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)$/,
+									test: /\.(png|jpg|jpeg|gif)$/,
 									loader: 'url-loader',
 									options: { limit: 8192 },
 								},

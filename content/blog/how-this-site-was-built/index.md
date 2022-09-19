@@ -22,7 +22,7 @@ I like working with Pulumi to build infrastructure because learning Terraform is
 
 The entire production infrastructure is defined in the repo and written in Javascript. Files and assets are stored on [S3](https://docs.aws.amazon.com/s3/index.html) and served via [Cloudfront](https://docs.aws.amazon.com/cloudfront/index.html). The Cloudfront distribution also routes API requests to an [API Gateway](https://docs.aws.amazon.com/apigateway/index.html), where I use [Lambdas](https://docs.aws.amazon.com/lambda/index.html) to process the requests. I'm only using the API to pass form submissions, but I need to do it somewhere when the site is entirely static. 
 
-There are limitations to serving a site from S3 with Cloudfront. I cannot route multiple subdomains to the same resource with a single distribution, so I was not able to handle naked domain requests on the server. Rather than creating a second distribution to route naked domain requests, I redirect those requests to the client.
+There are limitations to serving a site from S3 with Cloudfront. I cannot route multiple subdomains to the same resource with a single distribution, so I was not able to handle naked domain requests on the server. Rather than creating a second distribution to route naked domain requests, I redirect those requests on the client.
 
 The stack changes are deployed with a package.json command, `yarn deploy:prod`, which builds out all the client assets and static site files, followed by a Pulumi command, which checks for stack differences and deploys the changes.
 

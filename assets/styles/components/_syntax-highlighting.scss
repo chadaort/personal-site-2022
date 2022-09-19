@@ -155,7 +155,7 @@ code:not( [ class ] ) {
 .token.keyword-this,
 .token.this,
 .token.bold {
-	font-weight: bold;
+	font-weight: 400;
 }
 
 .token.delimiter.important {
@@ -173,7 +173,7 @@ code:not( [ class ] ) {
 .language-markdown .token.title,
 .language-markdown .token.title .token.punctuation {
 	color: var( --color__syntax-variable );
-	font-weight: bold;
+	font-weight: 400;
 }
 
 .language-markdown .token.blockquote.punctuation {

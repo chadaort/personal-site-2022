@@ -2,7 +2,7 @@ const requestHandler = require( './request' );
 
 describe( 'Test redirects and rewrites', () => {
 
-	it( 'Should work when it ens with index.html', () => {
+	it( 'Should work when it ends with index.html', () => {
 		const pageRequest = requestHandler( {
 			uri: 'foo/index.html',
 		} );
