@@ -8,7 +8,7 @@ module.exports = {
 		date: '11/21/2011',
 		title: 'NCSOFT refresh',
 		body: './index.md',
-		summary: 'Corporate site changes and especially redesigns can have a really tricky approval process and this project was no different. I think we ended up adding on like a dozen stakeholders in various capacities through the process.',
+		summary: 'Corporate site changes, particularly redesigns, can have a challenging approval process, and this project was no exception. About a dozen stakeholders participated in the process in various capacities. While everyone agreed that our corporate website should focus on the studios instead of the publisher, getting all the studios to agree on a shared design proved challenging.',
 		tags: [ 'website' ],
 	},
 	meta: {
