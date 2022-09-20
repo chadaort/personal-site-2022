@@ -8,7 +8,7 @@ module.exports = {
 		date: '04/20/2009',
 		title: 'NCSOFT redesign',
 		body: './index.md',
-		summary: 'It was my first project at NCSOFT, and they brought me onto it midway through. Having worked with some of the developers previously, I fit right in. A few areas of the design were still in progress, but they had already completed most of the front-end styles.',
+		summary: 'It was my first project at NCSOFT, and they brought me onto it midway through. Having worked with some of the developers previously, I fit right in. A few areas of the design were still in progress, but they had already completed most of the front-end styles. In addition, I was responsible for developing the site\'s interactivity and content management system.',
 		tags: [ 'website' ],
 	},
 	meta: {
