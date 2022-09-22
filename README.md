@@ -1,7 +1,7 @@
 ChadOrt.com
 =======
 
-Development repo for chadort.com.
+Development repo for [chadort.com](https://www.chadort.com).
 
 This project deploys a static site to S3 and uses Cloudfront with an Edge function for routing and making it publicly accessible. 
 
