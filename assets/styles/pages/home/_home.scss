@@ -2,8 +2,6 @@
 // Home page styles.
 //
 
-@import "./hero";
-
 //
 // Section - companies that I have worked for.
 //
@@ -46,9 +44,17 @@
 	}
 }
 
+.featured-companies__company {
+	font-weight: 600;
+	background: linear-gradient( 60deg, var( --color__primary-dark ) 20%, var( --color__secondary ) 80% );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .featured-companies__title {
 	@extend %typography-heading-3;
 	margin: 0 0 10px 0;
+	font-weight: 300;
 }
 
 .featured-companies__cta {
@@ -102,12 +108,8 @@
 	display: block;
 	color: var( --color__text-title-primary );
 
-	&:hover {
-		color: var( --color__secondary );
-	}
-
 	.featured-companies__company-li:hover & {
-		color: var( --color__secondary-text );
+		color: var( --color__secondary );
 	}
 }
 
@@ -123,7 +125,7 @@
 }
 
 .featured-companies__company-type {
-	margin: 0;
+	margin: -.15em 0 0;
 	color: var( --color__text-muted );
 	font-size: var( --font__large );
 	transition: color 200ms;
@@ -167,6 +169,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+	background-image: url( "/assets/images/mountain.png" );
 	background-position: center center;
 	background-size: cover;
 	z-index: -1;
@@ -245,6 +248,20 @@
 
 .feature-custom-build__copy {
 	margin-top: 15px;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: black;
+		filter: blur( 15rem );
+		z-index: -1;
+		opacity: .35;
+	}
 
 	p {
 		color: $color__white-f;

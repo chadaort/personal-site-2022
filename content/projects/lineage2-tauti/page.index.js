@@ -13,16 +13,12 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Game expansion microsite',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'Lineage 2 Tauti site screen 1',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen2-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen2.jpg`,
 				alt: 'Lineage 2 Tauti site screen 2',
 			},
 		],
@@ -30,6 +26,6 @@ module.exports = {
 		projectURL: 'https://www.lineage2.com/',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

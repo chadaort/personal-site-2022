@@ -124,13 +124,14 @@ function ContactForm() {
 
 		emailjs.sendForm( 'service_hfygmy3', 'template_o92c8tf', form.current, '9UAwdVcxjatg6YnQG' )
 			.then( ( result ) => {
+				formState( 'success' );
 				// @todo - Success handler.
 			}, ( error ) => {
 				// @todo - Error handler.
 			} );
 
 		// @tdo Handle the form submission with error and success states.
-		formState( 'success' );
+
 	};
 
 	/**

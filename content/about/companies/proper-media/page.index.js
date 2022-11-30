@@ -6,7 +6,7 @@ module.exports = {
 		date: '7/5/2016',
 		title: 'Proper Media',
 		body: './index.md',
-		summary: 'Proper Media is a technology company that provides digital media and advertising software and services. Proper Media\'s primary product is an ad-serving platform that helps publishers manage their advertising inventory and serve targeted ads to their audience.',
+		summary: 'Proper Media is a technology company that provides digital media and <strong>advertising software and services</strong>. Proper Media\'s primary product is an ad-serving platform that helps publishers manage their advertising inventory and serve targeted ads to their audience.',
 		tags: [ 'advertising' ],
 	},
 	meta: {
@@ -19,13 +19,9 @@ module.exports = {
 		position: 'Contract Developer',
 		disableImageTreatments: true,
 		projectUrl: 'http://propermedia.io/',
+		imageNamespace: 'proper-media',
 		featureImage: {
-			src: 'assets/images/brands/proper-media/banner.png',
-			path: 'assets/images/brands/proper-media',
-			filePrefix: 'banner',
 			alt: 'Proper Media banner image',
-			title: 'Proper Media',
-			summary: '',
 		},
 		logo: {
 			src: 'assets/images/brands/proper-media/logo',
@@ -35,7 +31,7 @@ module.exports = {
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => {
-			return pageHandler.getPostsByType( 'company', siteMap, 3, 'random' );
+			return pageHandler.getPostsByType( 'company', siteMap, 2, 'random' );
 		},
 	},
 };

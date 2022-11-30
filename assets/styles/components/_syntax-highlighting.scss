@@ -31,9 +31,46 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
+	margin: 2rem;
+	margin-left: -( gutter( frame ) );
+	margin-right: -( gutter( frame ) );
+	padding: 2em 0;
+	overflow: auto;
+	text-align: center;
 	background-color: var( --color__syntax-background );
-	border: 1px solid var( --color__syntax-border );
-	border-radius: 5px;
+	border-top: 1px solid var( --color__syntax-border );
+	border-bottom: 1px solid var( --color__syntax-border );
+
+	@include media-query( $start: tablet ) {
+		margin-left: -( gutter( frame, tablet ) );
+		margin-right: -( gutter( frame, tablet ) );
+	}
+
+	@include media-query( $start: desktop ) {
+		margin-left: calc( ( -100vw + 55rem ) / 2 );
+		margin-right: calc( ( -100vw + 55rem ) / 2 );
+	}
+
+	code {
+		margin: 0 gutter( frame );
+		display: inline-block;
+		width: 100%;
+		//max-width: 55rem;
+		text-align: left;
+
+		@include media-query( $start: tablet ) {
+			//margin-left: gutter( frame, tablet );
+			//margin-right: gutter( frame, tablet );
+		}
+
+		@include media-query( $start: desktop ) {
+			//background: red;
+			width: 55rem;
+			//margin-left: gutter( frame, desktop );
+			//margin-right: gutter( frame, desktop );
+		}
+	}
+
 }
 
 pre[class*="language-"]::-moz-selection,
@@ -48,13 +85,6 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
 	background: var( --color__syntax-select );
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: 0.5em 0;
-	overflow: auto;
 }
 
 // Inline styles.

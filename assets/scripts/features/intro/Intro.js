@@ -1,34 +1,107 @@
+import animate from '../../helpers/canvas-animate';
 import VideoPlayer from './VideoPlayer';
 
 const GRID_ASSETS = [
-	'content/aion-launch/intro-thumb.png',
-	'content/blade-and-soul-teaser/intro-thumb.png',
-	'content/guildwars2-launch/intro-thumb.png',
-	// 'content/lineage2-goddess-of-destruction/intro-thumb.png',
-	'content/lineage2-goddess-of-destruction/intro-thumb-2.png',
-	'content/ncsoft-redesign/intro-thumb.png',
-	'content/tv-tropes/intro-thumb.png',
-	// 'content/ad-tech-video-player/intro-thumb.png',
-	'wildstar-trailer.mp4',
-	'guildwars2-trailer.mp4',
-	'content/carbine-studios-redesign/intro-thumb.png',
-	'content/city-of-heroes-free-to-play/intro-thumb.png',
-	'content/city-of-heroes-going-rogue/intro-thumb.png',
-	'content/element-gallery/intro-thumb.png',
-	'content/lineage2-redesign/intro-thumb.png',
-	'content/lineage2-tauti/intro-thumb.png',
-	'content/ncsoft-redesign/intro-thumb.png',
-	'content/wordpress-zones-and-widgets-as-code/intro-thumb.png',
-	'content/membership/intro-thumb.png',
-	'content/webhook-consumer/intro-thumb.png',
-	'content/wildstar-teaser/intro-thumb.png',
-	'content/my-aion/intro-thumb.png',
-	'content/guildwars2-teaser/intro-thumb.png',
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/aion-launch/aion-launch--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/aion-launch/aion-launch--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/blade-and-soul-teaser/blade-and-soul-teaser--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/blade-and-soul-teaser/blade-and-soul-teaser--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/guildwars2-launch/guildwars2-launch--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/guildwars2-launch/guildwars2-launch--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/lineage2-goddess-of-destruction/lineage2-goddess-of-destruction--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/lineage2-goddess-of-destruction/lineage2-goddess-of-destruction--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/ncsoft-redesign/ncsoft-redesign--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/ncsoft-redesign/ncsoft-redesign--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/tv-tropes/tv-tropes--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/tv-tropes/tv-tropes--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/carbine-studios-redesign/carbine-studios-redesign--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/carbine-studios-redesign/carbine-studios-redesign--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/city-of-heroes-free-to-play/city-of-heroes-free-to-play--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/city-of-heroes-free-to-play/city-of-heroes-free-to-play--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/city-of-heroes-going-rogue/city-of-heroes-going-rogue--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/city-of-heroes-going-rogue/city-of-heroes-going-rogue--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/element-gallery/element-gallery--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/element-gallery/element-gallery--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/lineage2-redesign/lineage2-redesign--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/lineage2-redesign/lineage2-redesign--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/lineage2-tauti/lineage2-tauti--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/lineage2-tauti/lineage2-tauti--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/wordpress-zones-and-widgets-as-code/wordpress-zones-and-widgets-as-code--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/wordpress-zones-and-widgets-as-code/wordpress-zones-and-widgets-as-code--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/membership/membership--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/membership/membership--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/webhook-consumer/webhook-consumer--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/webhook-consumer/webhook-consumer--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/wildstar-teaser/wildstar-teaser--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/wildstar-teaser/wildstar-teaser--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'image',
+		asset: require( '/assets/images/project/my-aion/my-aion--thumb-intro.png?size=400' ),
+		placeholder: require( '/assets/images/project/my-aion/my-aion--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'video',
+		asset: require( '/assets/videos/wildstar-trailer.mp4' ),
+		placeholder: require( '/assets/images/project/wildstar-launch/wildstar-launch--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
+	{
+		type: 'video',
+		asset: require( '/assets/videos/guildwars2-trailer.mp4' ),
+		placeholder: require( '/assets/images/project/guildwars2-teaser/guildwars2-teaser--thumb-intro.png?placeholder=true%26placeholderSize=400%26injectPlaceholder=true' ),
+	},
 ];
 
 const CANVAS_ASSETS = {
-	topLeftMask: 'light-intro-top-left-mask.png',
-	bottomRightMask: 'light-intro-btm-right-mask.png',
+	topLeftMask: require( '/assets/images/light-intro-top-left-mask.png' ),
+	bottomRightMask: require( '/assets/images/light-intro-btm-right-mask.png' ),
 };
 
 const GRADIENT_COLORS = {
@@ -60,6 +133,16 @@ export default class Intro {
 	 * @param {Element} container Dom element
 	 */
 	constructor( container ) {
+
+		this.container = container;
+
+		this.canvas = document.createElement( 'canvas' );
+		this.canvas.className = 'intro-grid';
+		this.container.appendChild( this.canvas );
+
+		this.resizeCanvas = document.createElement( 'canvas' );
+		this.gridCanvas = document.createElement( 'canvas' );
+
 		this.setup( container );
 	}
 
@@ -67,21 +150,15 @@ export default class Intro {
 	 * Sets up the canvas.
 	 *
 	 * @param {Element} container Dom element
+	 * @param reload
 	 * @returns {undefined} Void
 	 */
-	setup( container ) {
-		this.container = container;
+	setup( container, reload = false ) {
 
-		this.canvas = document.createElement( 'canvas' );
 		this.ctx = this.canvas.getContext( '2d' );
 		this.canvas.width = this.container.getBoundingClientRect().width;
 		this.canvas.height = this.container.getBoundingClientRect().height;
 		this.ctx.imageSmoothingQuality = 'high';
-		this.canvas.className = 'intro-grid';
-		this.container.appendChild( this.canvas );
-
-		this.resizeCanvas = document.createElement( 'canvas' );
-		this.gridCanvas = document.createElement( 'canvas' );
 
 		this.gridAssets = [];
 		this.grid = this.calcGrid();
@@ -104,7 +181,10 @@ export default class Intro {
 		this.gradientSpeed = 0.75;
 
 		this.setupAssets();
-		this.changeHandler();
+
+		if ( ! reload ) {
+			this.changeHandler();
+		}
 
 		this.animationFrame = window.requestAnimationFrame( () => this.draw() );
 	}
@@ -115,13 +195,40 @@ export default class Intro {
 	 * @returns {undefined} Void
 	 */
 	setupAssets() {
+
 		const totalCount = this.grid.rows * this.grid.cols;
-		const shuffledGridAssets = this.constructor.shuffle( GRID_ASSETS );
+		let shuffledGridAssets = this.constructor.shuffle( GRID_ASSETS.map( ( x ) => {
+			return { ...x };
+		} ) );
+
+		shuffledGridAssets = shuffledGridAssets.map( ( item ) => {
+
+			if ( window.site.env === 'local' ) {
+				item.asset = item.asset.default;
+				// We're not creating images locally so we're using a single blurred image for all placeholders.
+				item.base64Placeholder = 'data:image/webp;base64,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';
+			} else {
+
+				item.base64Placeholder = item.placeholder.toString();
+
+				if ( item.type === 'image' ) {
+					item.asset = item.asset.src;
+				}
+			}
+			return item;
+		} );
 
 		let currIndex = 0;
 		while ( this.gridAssets.length < totalCount ) {
 			const item = shuffledGridAssets[currIndex];
-			const data = typeof item === 'string' ? { path: item } : item;
+			const { type, base64Placeholder } = item;
+			const data = {
+				type,
+				path: item.asset,
+				base64Placeholder,
+				placeholderOpacity: 0,
+				gridImageOpacity: 0,
+			};
 			this.gridAssets.push( data );
 			if ( currIndex >= shuffledGridAssets.length - 1 ) {
 				currIndex = 0;
@@ -143,13 +250,15 @@ export default class Intro {
 		}
 
 		Object.keys( CANVAS_ASSETS ).forEach( ( key ) => {
-			this.sceneImgs[key] = { path: CANVAS_ASSETS[key] };
+			this.sceneImgs[key] = {
+				path: window.site.env === 'local' ? CANVAS_ASSETS[key].default : CANVAS_ASSETS[key].src,
+			};
 
 			const img = new Image();
 			img.addEventListener( 'load', () => {
 				this.sceneImgs[key].img = img;
 			} );
-			img.src = `${ window.location.origin }/assets/images/${ this.sceneImgs[key].path }`;
+			img.src = this.sceneImgs[key].path;
 		} );
 	}
 
@@ -206,35 +315,76 @@ export default class Intro {
 	 * @returns {undefined} Void
 	 */
 	loadImageBlock( data ) {
-		const img = new Image();
-		data.type = 'image';
-		img.addEventListener( 'load', () => {
-			data.canvas = document.createElement( 'canvas' );
-			data.canvas.width = this.grid.itemWidth;
-			data.canvas.height = this.grid.itemHeight;
 
-			const scale = data.canvas.width / img.width;
-			const ctx = data.canvas.getContext( '2d' );
+		/**
+		 * @param image
+		 * @param event
+		 */
+		const drawImage = async ( event ) => {
+
+			const image = event.path[0];
+			const canvas = document.createElement( 'canvas' );
+			canvas.width = this.grid.itemWidth;
+			canvas.height = this.grid.itemHeight;
+
+			const scale = canvas.width / image.width;
+			const ctx = canvas.getContext( '2d' );
 			const resizeCtx = this.resizeCanvas.getContext( '2d' );
-			this.resizeCanvas.width = Math.round( img.width * scale );
-			this.resizeCanvas.height = Math.round( img.height * scale );
+			this.resizeCanvas.width = Math.round( image.width * scale );
+			this.resizeCanvas.height = Math.round( image.height * scale );
 
 			resizeCtx.clearRect( 0, 0, this.resizeCanvas.width, this.resizeCanvas.height );
-			resizeCtx.drawImage( img, 0, 0, this.resizeCanvas.width, this.resizeCanvas.height );
+			resizeCtx.drawImage( image, 0, 0, this.resizeCanvas.width, this.resizeCanvas.height );
 
 			ctx.drawImage(
 				this.resizeCanvas,
 				0, 0,
-				data.canvas.width, data.canvas.height,
+				canvas.width, canvas.height,
 				0, 0,
-				data.canvas.width, data.canvas.height
+				canvas.width, canvas.height
 			);
 
-			data.brightness = this.constructor.getImageBrightness( data.canvas ) > 105 ? 'light' : 'dark';
-			data.img = data.canvas;
+			if ( image.type === 'placeholder' ) {
+				data.placeholder = canvas;
+
+				await animate(
+					data,
+					{ placeholderOpacity: 1 },
+					350,
+					Math.round( ( Math.random() * 500 ) * 100 ) / 100
+				);
+				data.placeholderComplete = true;
+				return;
+			}
+
+			data.brightness = this.constructor.getImageBrightness( canvas ) > 105 ? 'light' : 'dark';
+			data.img = canvas;
+			data.canvas = canvas;
+			data.type = 'image';
 			data.opacity = 0;
-		} );
-		img.src = `${ window.location.origin }/assets/images/${ data.path }`;
+
+			await animate(
+				data,
+				{ gridImageOpacity: 1 },
+				750,
+				Math.round( ( Math.random() * ( 1200 - 850 ) ) + 850 * 100 ) / 100
+			);
+
+			data.animationComplete = true;
+		};
+
+		const placeholder = new Image();
+		placeholder.type = 'placeholder';
+		placeholder.crossOrigin = 'Anonymous';
+		placeholder.onload = drawImage;
+		placeholder.src = data.base64Placeholder;
+
+		const image = new Image();
+		image.type = 'main';
+		image.crossOrigin = 'Anonymous';
+		image.onload = drawImage;
+		image.src = data.path;
+
 	}
 
 	/**
@@ -246,7 +396,7 @@ export default class Intro {
 	loadVideoBlock( data ) {
 		data.type = 'video';
 		data.video = document.createElement( 'video' );
-		data.video.addEventListener( 'canplay', () => {
+		data.video.addEventListener( 'canplay', async () => {
 			data.video.width = this.grid.itemWidth;
 			data.video.height = this.grid.itemHeight;
 			data.video.autoPlay = true;
@@ -254,8 +404,58 @@ export default class Intro {
 			data.video.muted = true;
 			data.video.ready = true;
 			data.video.play();
+
+			await animate(
+				data,
+				{ gridImageOpacity: 1 },
+				500,
+				Math.round( ( Math.random() * ( 1200 - 350 ) ) + 350 * 100 ) / 100
+			);
+			data.animationComplete = true;
 		} );
-		data.video.src = `${ window.location.origin }/assets/videos/${ data.path }`;
+		data.video.src = data.path;
+
+		const placeholder = new Image();
+		placeholder.type = 'placeholder';
+		placeholder.crossOrigin = 'Anonymous';
+
+		/**
+		 *
+		 */
+		placeholder.onload = async () => {
+
+			const canvas = document.createElement( 'canvas' );
+			canvas.width = this.grid.itemWidth;
+			canvas.height = this.grid.itemHeight;
+
+			const scale = canvas.width / placeholder.width;
+			const ctx = canvas.getContext( '2d' );
+			const resizeCtx = this.resizeCanvas.getContext( '2d' );
+			this.resizeCanvas.width = Math.round( placeholder.width * scale );
+			this.resizeCanvas.height = Math.round( placeholder.height * scale );
+
+			resizeCtx.clearRect( 0, 0, this.resizeCanvas.width, this.resizeCanvas.height );
+			resizeCtx.drawImage( placeholder, 0, 0, this.resizeCanvas.width, this.resizeCanvas.height );
+
+			ctx.drawImage(
+				this.resizeCanvas,
+				0, 0,
+				canvas.width, canvas.height,
+				0, 0,
+				canvas.width, canvas.height
+			);
+
+			data.placeholder = canvas;
+
+			await animate(
+				data,
+				{ placeholderOpacity: 1 },
+				500,
+				Math.round( ( Math.random() * 350 ) * 100 ) / 100
+			);
+			data.placeholderComplete = true;
+		};
+		placeholder.src = data.base64Placeholder;
 	}
 
 	/**
@@ -292,28 +492,30 @@ export default class Intro {
 			vid.src = `${ window.location.origin }/assets/videos/${ path }`;
 		} );
 
-		Promise.all( Object.keys( data.assets ).map( ( key ) => {
-			const pathParts = data.assets[key].split( '.' );
+		if ( data.assets ) {
+			Promise.all( Object.keys( data.assets ).map( ( key ) => {
+				const pathParts = data.assets[key].split( '.' );
 
-			if ( pathParts[pathParts.length - 1] === 'mp4' ) {
-				return loadVid( data.assets[key] ).then( ( el ) => {
+				if ( pathParts[pathParts.length - 1] === 'mp4' ) {
+					return loadVid( data.assets[key] ).then( ( el ) => {
+						data.assets[key] = el;
+					} );
+				}
+
+				return loadImg( data.assets[key] ).then( ( el ) => {
 					data.assets[key] = el;
 				} );
-			}
+			} ) ).then( () => {
+				switch ( data.name ) {
+					case 'video-player':
+						data.instance = new VideoPlayer( this, data );
+						break;
 
-			return loadImg( data.assets[key] ).then( ( el ) => {
-				data.assets[key] = el;
+					default:
+						break;
+				}
 			} );
-		} ) ).then( () => {
-			switch ( data.name ) {
-				case 'video-player':
-					data.instance = new VideoPlayer( this, data );
-					break;
-
-				default:
-					break;
-			}
-		} );
+		}
 	}
 
 	/**
@@ -323,7 +525,7 @@ export default class Intro {
 	 * @returns {undefined} Void
 	 */
 	drawComplexBlock( data ) {
-		if ( ! data.instance.canvas ) {
+		if ( ! data.instance || ! data.instance.canvas ) {
 			return;
 		}
 		const gridCtx = this.gridCanvas.getContext( '2d' );
@@ -338,13 +540,23 @@ export default class Intro {
 	 * @returns {undefined} Void
 	 */
 	drawVideoBlock( data ) {
+
+		const gridCtx = this.gridCanvas.getContext( '2d' );
+		gridCtx.clearRect( data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
+
+		if ( data.placeholder ) {
+			gridCtx.globalAlpha = data.placeholderOpacity;
+			gridCtx.drawImage( data.placeholder, data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
+			gridCtx.globalAlpha = 1;
+		}
+
 		if ( ! data.video.ready ) {
 			return;
 		}
-		const gridCtx = this.gridCanvas.getContext( '2d' );
+
 		const resizeVideo = this.resizeVideo( data.video );
 
-		gridCtx.clearRect( data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
+		gridCtx.globalAlpha = data.gridImageOpacity;
 		gridCtx.drawImage(
 			resizeVideo,
 			0, 0,
@@ -352,11 +564,14 @@ export default class Intro {
 			data.x, data.y,
 			this.grid.itemWidth, this.grid.itemHeight
 		);
+		gridCtx.globalAlpha = 1;
 
+		/*
 		gridCtx.globalAlpha = 0.35;
 		gridCtx.fillStyle = 'black';
 		gridCtx.fillRect( data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
 		gridCtx.globalAlpha = 1;
+		*/
 	}
 
 	/**
@@ -366,13 +581,24 @@ export default class Intro {
 	 * @returns {undefined} Void
 	 */
 	drawImageBlock( data ) {
-		if ( ! data.canvas ) {
+		if ( ! data.canvas && ! data.placeholder ) {
 			return false;
 		}
-		const gridCtx = this.gridCanvas.getContext( '2d' );
-		gridCtx.drawImage( data.canvas, data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
 
-		return true;
+		const gridCtx = this.gridCanvas.getContext( '2d' );
+
+		if ( data.placeholder && ! data.animationComplete ) {
+			gridCtx.globalAlpha = data.placeholderOpacity;
+			gridCtx.drawImage( data.placeholder, data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
+			gridCtx.globalAlpha = 1;
+		}
+
+		if ( data.canvas ) {
+			gridCtx.globalAlpha = data.gridImageOpacity;
+			gridCtx.drawImage( data.canvas, data.x, data.y, this.grid.itemWidth, this.grid.itemHeight );
+			gridCtx.globalAlpha = 1;
+		}
+
 	}
 
 	/**
@@ -385,6 +611,7 @@ export default class Intro {
 			this.drawGrid();
 			return;
 		}
+
 		const gridCtx = this.gridCanvas.getContext( '2d' );
 		gridCtx.clearRect( 0, 0, this.gridCanvas.width, this.gridCanvas.height );
 		gridCtx.drawImage( this.cachedGridCanvas, 0, 0, this.cachedGridCanvas.width, this.cachedGridCanvas.height );
@@ -458,7 +685,7 @@ export default class Intro {
 			x = 0;
 		}
 
-		if ( imgCounter === this.gridAssets.filter( ( block ) => block.type === 'image' ).length ) {
+		if ( this.gridAssets.length === this.gridAssets.filter( ( block ) => block.animationComplete ).length ) {
 			this.cachedGridCanvas = document.createElement( 'canvas' );
 			this.cachedGridCanvas.width = this.canvas.width;
 			this.cachedGridCanvas.height = this.canvas.height;
@@ -529,6 +756,10 @@ export default class Intro {
 		this.updateGrid();
 		this.drawGridColors();
 
+		const originalCompOp = this.ctx.globalCompositeOperation;
+
+		let masksLoaded = false;
+
 		if ( this.sceneImgs.topLeftMask && this.sceneImgs.topLeftMask.img && this.sceneImgs.bottomRightMask && this.sceneImgs.bottomRightMask.img ) {
 			const defaultCompOp = this.ctx.globalCompositeOperation;
 
@@ -556,12 +787,16 @@ export default class Intro {
 				btmRightMaskHeight
 			);
 
-			this.ctx.globalCompositeOperation = 'source-in';
-
-			this.ctx.drawImage( this.gridCanvas, 0, 0 );
-
-			this.ctx.globalCompositeOperation = defaultCompOp;
+			masksLoaded = true;
 		}
+
+		if ( masksLoaded ) {
+			this.ctx.globalCompositeOperation = 'source-in';
+		}
+
+		this.ctx.drawImage( this.gridCanvas, 0, 0 );
+
+		this.ctx.globalCompositeOperation = originalCompOp;
 
 		this.ctx.globalCompositeOperation = test;
 		this.lastTime = performance.now();
@@ -592,20 +827,21 @@ export default class Intro {
 			}
 
 			window.cancelAnimationFrame( this.animationFrame );
-			this.canvas.width = this.container.getBoundingClientRect().width;
-			this.canvas.height = this.container.getBoundingClientRect().height;
-			this.theme = document.body.getAttribute( 'data-theme' );
-			this.deviceSize = this.getDeviceSize();
-			this.orientation = this.canvas.width > this.canvas.height ? 'landscape' : 'portrait';
-			this.colors = this.theme === 'dark' ? GRADIENT_COLORS.dark : GRADIENT_COLORS.light;
-			this.gridAssets = [];
-			this.sceneImgs = {};
-			this.grid = this.calcGrid();
-			this.setupAssets();
-			delete this.cachedGridCanvas;
-			this.animationFrame = window.requestAnimationFrame( () => this.draw() );
-			this.renderedDimensions.width = document.documentElement.clientWidth;
-			this.renderedDimensions.height = document.documentElement.clientHeight;
+
+			this.ctx.fillStyle = 'white';
+			this.ctx.fillRect( 0, 0, this.canvas.width, this.canvas.height );
+
+			const resizeCtx = this.resizeCanvas.getContext( '2d' );
+			resizeCtx.fillStyle = 'white';
+			resizeCtx.fillRect( 0, 0, this.canvas.width, this.canvas.height );
+
+			const gridCtx = this.gridCanvas.getContext( '2d' );
+			gridCtx.fillStyle = 'white';
+			gridCtx.fillRect( 0, 0, this.canvas.width, this.canvas.height );
+
+			this.cachedGridCanvas = null;
+
+			this.setup( document.querySelector( '.page-hero' ), true );
 		};
 
 		window.addEventListener( 'resize', onChange );

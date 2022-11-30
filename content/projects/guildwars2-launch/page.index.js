@@ -13,21 +13,15 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Game launch site',
-		thumb: `assets/images/content/${assetNamespace}/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${assetNamespace}/screen1-thumb`,
-				raw: `assets/images/content/${assetNamespace}/screen1.jpg`,
 				alt: 'Guild Wars 2 screen 1',
 			},
 			{
-				src: `assets/images/content/${assetNamespace}/screen2-thumb`,
-				raw: `assets/images/content/${assetNamespace}/screen2.jpg`,
 				alt: 'Guild Wars 2 screen 2',
 			},
 			{
-				src: `assets/images/content/${assetNamespace}/screen3-thumb`,
-				raw: `assets/images/content/${assetNamespace}/screen3.jpg`,
 				alt: 'Guild Wars 2 screen 3',
 			},
 		],
@@ -36,6 +30,6 @@ module.exports = {
 		highlight: '60+ million monthly visitors',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

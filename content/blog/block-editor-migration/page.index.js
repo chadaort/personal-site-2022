@@ -7,7 +7,7 @@ module.exports = {
 		title: 'Block Editor Migration',
 		body: './index.md',
 		summary: 'It was a fair amount of work to migrate Snopes to the block editor since they have a lot of content that was written with the classic editor. The project was too big for me to handle alone, so we hired a project manager and a couple of developers from Human Made for five, two-week sprints.',
-		tags: [ 'website' ]
+		tags: [ 'website' ],
 	},
 	meta: {
 		subtitle: 'Game launch site',
@@ -16,18 +16,12 @@ module.exports = {
 		disableImageTreatments: true,
 		hasSidebar: true,
 		projectURL: 'https://www.snopes.com',
-		thumb: `assets/images/blog/block-editor-migration/thumb`,
+		imageNamespace: 'block-editor-migration',
 		featureImage: {
-			src: 'assets/images/blog/block-editor-migration/banner.png',
-			path: 'assets/images/blog/block-editor-migration',
-			filePrefix: 'banner',
-			something: '',
 			alt: 'Block editor migration banner image',
-			title: 'Block editor migration',
-			summary: '',
 		},
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 3, 'random' )
-	}
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),
+	},
 };

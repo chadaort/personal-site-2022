@@ -77,9 +77,12 @@ const menuToggle = async ( active ) => {
 
 		document.body.classList.remove( 'header__menu--active', 'blackout', 'header__menu--transitioning-close' );
 		document.getElementById( 'header__controls-menu-toggle' ).ariaExpanded = 'false';
+		closeBtn.removeEventListener( 'click', onCloseEvent );
+		document.querySelector( '.body-blackout' ).removeEventListener( 'click', onCloseEvent );
 	};
 
 	closeBtn.addEventListener( 'click', onCloseEvent );
+	document.querySelector( '.body-blackout' ).addEventListener( 'click', onCloseEvent );
 
 	document.querySelector( '.header__menu-wrapper' ).appendChild( closeBtn );
 };

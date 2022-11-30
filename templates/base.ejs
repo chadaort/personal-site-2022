@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
 	<%- include( './helpers/class-builder' ) -%>
-	<head><%- include( 'main/head' ) %></head>
+	<head>
+		<%- include( 'main/head' ) %>
+	</head>
 
 	<body class="<%= buildBodyClass( templateData ) %>">
 
@@ -75,11 +77,20 @@
 					<% if ( templateData.sidebar ) { %>
 						<aside id="aside-content" class="aside-content" role="complementary">
 							<% if ( templateData.post.type === 'project' ) { %>
-								<%- include( 'main/content-aside/projects' ) -%>
+								<%- include( 'partials/aside', {
+									sectionTitle: 'Other Projects',
+									lazyLoadType: '',
+								} ) %>
 							<% } else if ( templateData.post.type === 'company' ) { %>
-								<%- include( 'main/content-aside/companies' ) %>
+								<%- include( 'partials/aside', {
+									sectionTitle: 'Other Companies',
+									lazyLoadType: '',
+								} ) %>
 							<% } else if ( templateData.post.type === 'blog' ) { %>
-								<%- include( 'main/content-aside/blog' ) %>
+								<%- include( 'partials/aside', {
+									sectionTitle: 'Blog Posts',
+									lazyLoadType: '',
+								} ) %>
 							<% } %>
 						</aside>
 					<% } %>
@@ -90,5 +101,6 @@
 			</div>
 		</div>
 		<%- include( 'main/scripts' ) %>
+		<span class="body-blackout"></span>
 	</body>
 </html>

@@ -6,9 +6,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import ContactForm from './components/ContactForm';
 import activeMenu from './features/active-menu';
-import contentAside from './features/content-aside';
 import icons from './features/icons';
-import Intro from './features/intro/Intro';
+import imageBackgroundTreatment from './features/image-background-treatment';
+import lazyLoad from './features/lazy-load/index';
 import lightbox from './features/lightbox';
 import menuToggle from './features/menu-toggle';
 import pageFeature from './features/page-feature';
@@ -23,17 +23,13 @@ if ( module.hot ) {
 themeToggle();
 menuToggle();
 icons();
-contentAside();
 activeMenu();
 wwwRedirect();
 pageFeature();
 lightbox();
 syntaxHighlighting();
-
-// Home page hero.
-if ( document.querySelector( '.is-home .page-hero' ) ) {
-	new Intro( document.querySelector( '.page-hero' ) );
-}
+lazyLoad();
+imageBackgroundTreatment();
 
 // Contact form.
 if ( document.getElementById( 'contact-form' ) ) {

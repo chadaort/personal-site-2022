@@ -2,8 +2,6 @@
 Template to output an invidual featured image or a set of them.
 */%>
 
-<%- include( '../helpers/img-utils' ) -%>
-
 <% if ( templateData.meta.featureImage || templateData.meta.featureImageSet ) { %>
 
 	<div class="page-feature__wrapper">
@@ -12,14 +10,15 @@ Template to output an invidual featured image or a set of them.
 			<figure class="page-feature__img-wrapper<%= templateData.meta.disableImageTreatments ? ' no-img-treatment' : '' %>">
 				<img
 					class="page-feature__img"
-					src="<%= getSrc( templateData.meta.featureImage.src, [ 1280 ] ) %>"
-					srcset="<%= getSrcsetNew(
-						templateData.meta.featureImage.path,
-						templateData.meta.featureImage.filePrefix,
-						templateData.meta.featureImageSizes ? templateData.meta.featureImageSizes : false
-					) %>"
+					src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--banner.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500` %>"
+					data-src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--banner.png?size=972` %>"
+					data-srcset="
+						<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--banner.png?size=480 480w` %>,
+						<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--banner.png?size=720 720w` %>,
+						<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--banner.png?size=972 972w` %>
+					"
 					alt="<%= templateData.meta.featureImage.alt %>"
-				/>
+					data-lazy-load />
 				<% if ( templateData.content && templateData.content.afterFeaturedImage ) { %>
 					<%- templateData.content.afterFeaturedImage() %>
 				<% } %>
@@ -34,20 +33,29 @@ Template to output an invidual featured image or a set of them.
 					<figure class="page-feature__img-wrapper<%= ! hasImg ? ' page-feature__img-wrapper-empty' : '' %>">
 						<% if ( hasImg ) { %>
 							<a
-								data-lightbox-img="<%= `${ templateData.site.core.siteUrl }/${ templateData.meta.featureImageSet[ i ].raw }` %>"
+								data-lightbox-img="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png` %>"
 								class="page-feature__img-link"
-								href="#"
-							>
+								href="#">
 								<img
 									class="page-feature__img"
-									src="<%= getSrc( templateData.meta.featureImageSet[ i ].src, [972] ) %>"
+									src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500` %> %>"
+									data-src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=972` %>"
+									data-srcset="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=480 480w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=720 720w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=972 972w` %>"
 									alt="<%= templateData.meta.featureImageSet[ i ].alt %>"
-								/>
+									data-lazy-load />
 								<span class="page-feature__hover-bg" role="none"></span>
 								<i class="page-feature__img-signal icon icon--circle icon--screenshot"></i>
 							</a>
-							<a id="pic1" class="lightbox" href="#">
-								<span style="background-image: url( '<%= getSrc( templateData.meta.featureImageSet[ i ].src, [972] ) %>' )"></span>
+							<a id="<%= `lightbox-image-${ i + 1 }` %>>" class="lightbox" href="#">
+								<img
+									data-src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--screen${ i + 1 }.png?size=1200` %>"
+									data-srcset="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--screen${ i + 1 }.png?size=480 480w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--screen${ i + 1 }.png?size=700 700w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--screen${ i + 1 }.png?size=900 900w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--screen${ i + 1 }.png?size=1200 1200w` %>"
+									alt="<%= `${ templateData.meta.featureImageSet[ i ].alt } - Full screen` %>">
 							</a>
 						<% } else { %>
 							<span class="page-feature__img-empty" role="none"></span>

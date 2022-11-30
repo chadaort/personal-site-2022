@@ -15,21 +15,15 @@ module.exports = {
 		subtitle: 'Game launch site',
 		homePageList: true,
 		projectPosition: 'lead developer',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'Aion screen 1',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen2-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen2.jpg`,
 				alt: 'Aion screen 2',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen3-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen3.jpg`,
 				alt: 'Aion screen 3',
 			},
 		],
@@ -39,6 +33,6 @@ module.exports = {
 		highlight: '20+ million <span>monthly visitors</span>',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

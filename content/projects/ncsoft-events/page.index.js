@@ -13,17 +13,15 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Public speaking events',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'NCSOFT events screen 1',
 			},
 		],
 		projectStillActive: false,
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

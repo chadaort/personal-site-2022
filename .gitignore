@@ -7,3 +7,5 @@ yarn-error.log
 /_asset-sources/
 .DS_Store
 *.bckp
+*.zip
+*-bckp

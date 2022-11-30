@@ -13,19 +13,15 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'A prelaunch site',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'Element gallery background image',
-				title: 'Element gallery',
-				summary: 'Element gallery screen 1',
 			},
 		],
 		projectStillActive: false,
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

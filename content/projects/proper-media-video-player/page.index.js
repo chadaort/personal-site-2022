@@ -13,11 +13,8 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Ad tech',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImage: {
-			src: `assets/images/content/${ assetNamespace }/banner`,
-			path: `assets/images/content/${ assetNamespace }`,
-			filePrefix: 'banner',
 			alt: 'Video player banner',
 		},
 		projectStillActive: true,
@@ -25,6 +22,6 @@ module.exports = {
 		projectURL: 'https://propermedia.io',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

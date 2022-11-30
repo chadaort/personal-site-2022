@@ -75,6 +75,7 @@ module.exports = function( source ) {
 		ast.figure_out_scope();
 		template = ast.print_to_string( { beautify: true } );
 	}
-
+	return template;
+	return `export default ${JSON.stringify(template)}`;
 	return 'module.exports = ' + JSON.stringify( template );
 }

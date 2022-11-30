@@ -15,26 +15,18 @@ module.exports = {
 		homePageList: true,
 		projectPosition: 'lead developer',
 		subtitle: 'Teaser site',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'Blade and Soul screen 1',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen2-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen2.jpg`,
 				alt: 'Blade and Soul screen 2',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen3-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen3.jpg`,
 				alt: 'Blade and Soul screen 3',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen4-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen4.jpg`,
 				alt: 'Blade and Soul screen 4',
 			},
 		],
@@ -44,6 +36,6 @@ module.exports = {
 		projectURL: 'https://www.bladeandsoul.com/en-us',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

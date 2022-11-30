@@ -54,7 +54,7 @@
 	}
 
 	&:hover .page-feature__hover-bg {
-		background-color: rgba( #000, 0.45 );
+		background-color: rgba( #000, 0.25 );
 	}
 
 	&:hover::before,
@@ -100,7 +100,8 @@
 
 .page-feature__img-wrapper {
 	@extend %img__treatment-primary;
-	margin: 0;
+	margin-left: -( gutter( "frame" ) );
+	margin-right: -( gutter( "frame" ) );
 	flex: 1;
 	position: relative;
 
@@ -116,10 +117,76 @@
 		background-color: rgba( $color__black-0, 0.25 );
 		box-shadow: inset 0 0 3rem 2rem rgba( $color__black-0, 0.35 );
 	}
+
+	@include media-query( $start: tablet ) {
+		margin-left: -( gutter( "frame", tablet ) );
+		margin-right: -( gutter( "frame", tablet ) );
+
+		.page-feature__set & {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	@include media-query( $start: desktop ) {
+		margin-left: -( gutter( "frame", desktop ) );
+		margin-right: -( gutter( "frame", desktop ) );
+
+		.page-feature__set & {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	@include media-query( $start: wide ) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 .page-feature__img {
 	@extend %img__x;
+	position: relative;
+}
+
+.lazy {
+	//position: absolute;
+	//opacity: 1;
+}
+
+[data-lazy-load="pieces"] {
+	visibility: hidden;
+}
+
+.article__body .img-wrapper {
+	position: relative;
+}
+
+.lazy-canvas-image {
+	position: absolute;
+	opacity: 1;
+	pointer-events: none;
+
+	&.lazy-canvas-image--deactivate {
+		opacity: 0;
+		transition: opacity 750ms;
+		//opacity: 1;
+		//border-radius: 50%;
+
+		+ img {
+			//visibility: hidden;
+		}
+	}
+
+	&.lazy-canvas-image--deactivate-cached {
+		opacity: 0;
+		transition: opacity 500ms;
+	}
+}
+
+.lazy--active {
+	//opacity: 0;
+	//transition: opacity 2s linear;
 }
 
 .page-feature__img-empty {

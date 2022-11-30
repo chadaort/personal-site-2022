@@ -41,8 +41,4 @@
 
 .aside-content {
 	flex: 0 0 100%;
-
-	@include media-query( $start: desktop-lg ) {
-		display: none;
-	}
 }

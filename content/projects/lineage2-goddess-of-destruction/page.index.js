@@ -13,11 +13,9 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Expansion microsite',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'Lineage 2 Goddess of Destruction screen',
 			},
 		],
@@ -25,6 +23,6 @@ module.exports = {
 		projectURL: 'https://www.lineage2.com/',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

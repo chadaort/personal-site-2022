@@ -22,6 +22,7 @@
 		--font__xxsmall: #{ modular-rem-scale( -1.5, $font-size ) };
 		--font__large: #{ modular-rem-scale( 0.5, $font-size ) };
 
+		--font__size-summary: #{ modular-rem-scale( -0.2, $font-size ) };
 		--font__size-small: #{ modular-rem-scale( -0.35, $font-size ) };
 		--font__size-xsmall: #{ modular-rem-scale( -0.65, $font-size ) };
 		--font__size-xxsmall: #{ modular-rem-scale( -1.5, $font-size ) };
@@ -50,17 +51,7 @@
 	@include set-font-size-vars( 18 );
 }
 
-// High resolution desktop
-@include media-query( $start: desktop, $end: wide, $high-density: true ) {
+// Desktop & up
+@include media-query( $start: desktop ) {
 	@include set-font-size-vars( 19 );
-}
-
-// Wide
-@include media-query( $start: wide ) {
-	@include set-font-size-vars( 19 );
-}
-
-// High resolution wide
-@include media-query( $start: wide, $high-density: true ) {
-	@include set-font-size-vars( 20 );
 }

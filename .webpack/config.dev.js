@@ -35,7 +35,9 @@ module.exports = [ {
 		},
 	},
 	entry: [
-		path.join( process.cwd(), 'assets/styles/app.scss' ),
+		path.join( process.cwd(), 'assets/styles/app-core.scss' ),
+		path.join( process.cwd(), 'assets/styles/app-features.scss' ),
+		path.join( process.cwd(), 'assets/scripts/home-page-intro.js' ),
 		path.join( process.cwd(), 'assets/scripts/app.js' ),
 	],
 	output: {

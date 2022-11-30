@@ -13,11 +13,8 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'WordPress Plugin',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImage: {
-			src: `assets/images/content/${ assetNamespace }/banner`,
-			path: `assets/images/content/${ assetNamespace }`,
-			filePrefix: 'banner',
 			alt: 'Wordpress zones and widgets as code banner',
 		},
 		hasSidebar: true,
@@ -26,6 +23,6 @@ module.exports = {
 		projectURL: 'https://www.snopes.com',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

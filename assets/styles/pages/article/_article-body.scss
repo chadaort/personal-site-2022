@@ -1,0 +1,281 @@
+.article__body {
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	p {
+		overflow: hidden;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	//
+	// Images.
+	//
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	.img-wrapper {
+		margin-left: -( gutter( "frame" ) );
+		margin-right: -( gutter( "frame" ) );
+		display: inline-block;
+		position: relative;
+
+		@include media-query( $start: tablet ) {
+			margin-left: -( gutter( "frame", "tablet" ) );
+			margin-right: -( gutter( "frame", "tablet" ) );
+		}
+	}
+
+	figure {
+		margin: 1.5rem 0;
+		clear: both;
+		font-size: 0;
+		text-align: center;
+	}
+
+	figcaption {
+		margin-top: 0.4em;
+		color: var(--color__text-muted);
+		font-size: var( --font__size-xsmall);
+		text-align: center;
+	}
+
+	//
+	// Headings.
+	//
+	h2 {
+		margin-left: -.3em;
+	}
+
+	//
+	// Anchors.
+	//
+	a {
+		position: relative;
+		white-space: nowrap;
+		font-weight: 600;
+
+		&:hover::after {
+			content: '';
+			height: 2px;
+			position: absolute;
+			bottom: -1px;
+			left: -1px;
+			right: -1px;
+			background: var( --color__secondary-line );
+			border-radius: 99px;
+		}
+	}
+
+	//
+	// Lists.
+	//
+	ul {
+
+	}
+
+	li {
+		margin-bottom: .3em;
+		position: relative;
+		list-style-type: none;
+		color: var( --color__text-title-primary );
+		font-size: 1.055em;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: calc( ( 1em * 1.55 / 2 ) - .35em / 2);
+			left: -1.2rem;
+			width: .35em;
+			height: .35em;
+			background: var( --color__primary-dark );
+			border-radius: 50%;
+		}
+	}
+
+	ul ul {
+		margin-top: .35em;
+		margin-bottom: .5em;
+	}
+
+	li li {
+		font-size: .9em;
+
+		&::after {
+			background: #666;
+		}
+	}
+
+	//
+	// Block quotes.
+	//
+	blockquote {
+		margin-left: -( gutter( "frame" ) );
+		margin-right: -( gutter( "frame" ) );
+		padding: 2.5rem 3rem;
+		text-align: center;
+		background: var( --color__primary-dark );
+
+		p {
+			margin: 0;
+			padding: 0;
+			max-width: 50rem;
+			display: inline-block;
+			color: white;
+			font-size: var( --font__scale-2 );
+			font-weight: 500;
+			font-family: $typography__font-heading;
+			line-height: 1.4;
+		}
+
+		@include media-query( $start: tablet ) {
+			margin-left: -( gutter( "frame", "tablet" ) );
+			margin-right: -( gutter( "frame", "tablet" ) );
+		}
+
+
+		@include media-query( $start: desktop ) {
+			margin: 2.5rem 0 3rem calc( ( -100vw + 55rem ) / 2 );
+			padding: 2.5rem 3rem 2.5rem 0;
+			text-align: right;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+		}
+
+		@include media-query( $start: desktop-lg ) {
+			margin: 2.5rem 0 3rem calc( ( -100vw + 55rem ) / 2 );
+			padding: 2.5rem 3rem 2.5rem 0;
+			text-align: right;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+		}
+
+	}
+
+	.code-block-notation {
+		margin-top: 2rem;
+		position: absolute;
+		left: 0;
+		color: var(--color__text-title-primary);
+		font-family: $typography__font-mono;
+		font-size: var( --font__scale-0 );
+		text-transform: uppercase;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -.5em;
+			left: 0;
+			width: 5rem;
+			height: 3px;
+			background: var( --color__primary );
+			border-radius: 99px;
+		}
+
+		+ pre {
+			padding-top: 5rem;
+		}
+	}
+
+	//
+	// Utility classes.
+	//
+	.clear-fix {
+		clear: both;
+	}
+
+	@include media-query( $start: tablet-lg ) {
+
+		.align-left,
+		.align-far-left,
+		.align-right,
+		.align-far-right {
+			margin-top: .45em;
+			margin-bottom: 1rem;
+			max-width: 350px;
+		}
+
+		.align-left {
+			margin-right: 3.5rem;
+			margin-left: -1rem;
+			float: left;
+		}
+
+		.align-far-left {
+			margin-right: 3.5rem;
+			margin-left: calc( ( -100vw + 55rem ) / 2 );
+			float: left;
+		}
+
+		.align-right {
+			margin-right: -1rem;
+			margin-left: 3.5rem;
+			float: right;
+		}
+
+		.align-far-right {
+			margin-right: calc( ( -100vw + 55rem ) / 2 );
+			margin-left: 3.5rem;
+			float: right;
+		}
+	}
+
+	@include media-query( $start: desktop ) {
+
+		.align-left,
+		.align-right {
+			max-width: 350px;
+		}
+
+		.align-left {
+			margin-left: -1.85rem;
+		}
+
+		.align-right {
+			margin-right: -1.85rem;
+		}
+
+		.align-far-left,
+		.align-far-right {
+			max-width: 450px;
+		}
+	}
+
+	@include media-query( $start: desktop-lg ) {
+
+		.align-left,
+		.align-right {
+			max-width: 450px;
+		}
+
+		.align-left {
+			margin-left: -2.5rem;
+		}
+
+		.align-right {
+			margin-right: -2.5rem;
+		}
+
+		.align-far-left,
+		.align-far-right {
+			max-width: 550px;
+		}
+	}
+
+	@include media-query( $start: wide-lg ) {
+
+		.align-far-left {
+			margin-left: -10rem;
+		}
+
+		.align-far-right {
+			margin-right: -10rem;
+		}
+	}
+}

@@ -98,11 +98,11 @@
 
 	.header__menu--active & {
 		display: block;
-		color: #fff;
+		color: #{ $color__white-f };
 		font-weight: 600;
 
 		&:hover {
-			color: #222;
+			color: var( --color__secondary );
 		}
 	}
 

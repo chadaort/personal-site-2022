@@ -3,7 +3,7 @@
 	<section class="featured-companies" aria-labelledby="featured-companies-title">
 
 		<div class="featured-companies__content">
-			<h2 id="featured-companies-title" class="featured-companies__title">I currently work for <span class="featured-companies__company">Snopes</span> as the lead developer supporting our fact checking initiatives.</h2>
+			<h2 id="featured-companies-title" class="featured-companies__title">I currently <span class="featured-companies__company">work for Snopes</span> as the lead developer supporting our fact checking initiatives.</h2>
 			<a class="featured-companies__cta" href="<%= templateData.site.core.siteUrl %>/about/companies">View work history</a>
 		</div>
 
@@ -11,7 +11,7 @@
 			<ul class="featured-companies__company-ul">
 				<% templateData.companies.forEach( company => { %>
 					<li class="featured-companies__company-li">
-						<h3 class="featured-companies__company-title"><a class="featured-companies__company-a" href="<%= company.post.publicPath %>"><%= company.post.title %></a></h3>
+						<h3 class="featured-companies__company-title"><a class="featured-companies__company-a" href="<%= company.post.publicPath %>"><%= company.post.shortTitle ?? company.post.title %></a></h3>
 						<h4 class="featured-companies__company-type"><%= company.meta.companyType %></h4>
 					</li>
 				<% } ); %>
@@ -21,17 +21,23 @@
 	</section>
 
 	<section class="feature-custom-build has-dark-bg" aria-labelledby="custom-build-title">
-		<div class="feature-custom-build__bg-img" style="background-image: url( <%= templateData.site.core.siteUrl %>/assets/images/mountain.png )"></div>
+		<div class="feature-custom-build__bg-img"></div>
 		<div class="feature-custom-build__inner-wrapper">
 			<div class="feature-custom-build__content">
-				<h2 id="custom-build-title" class="feature-custom-build__title">How this site was built</h2>
+				<h2 id="custom-build-title" class="feature-custom-build__title">Personal Site Build</h2>
 				<div class="feature-custom-build__copy">
 					<p>There are a few technologies that I have wanted to work with or extend my knowledge around, so I set out to do them on my personal website. In order to avoid maintaining a database, I chose not to use WordPress or another CMS. Using Webpack and Markdown files, I built a static site generator. It can be committed to Github and requires little maintenance. The infrastructure is defined in Javascript and provisioned in AWS using Pulumi.</p>
 					<a class="feature-custom-build__cta" href="https://github.com/chadaort/personal-site-2022">View project on Github</a>
 				</div>
 			</div>
 			<a class="feature-custom-build__visual" href="#">
-				<img class="feature-custom-build__visual-img" src="<%= templateData.site.core.siteUrl %>/assets/images/visual.png" alt="">
+				<img
+					class="feature-custom-build__visual-img"
+					src="/assets/images/visual.png?size=800"
+					data-srcset="/assets/images/visual.png?size=480 480w,
+						/assets/images/visual.png?size=700 700w,
+						/assets/images/visual.png?size=800 800w"
+					alt="Site diagram">
 			</a>
 		</div>
 	</section>

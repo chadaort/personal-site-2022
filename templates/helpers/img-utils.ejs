@@ -17,13 +17,13 @@ const defaultImgWidthsNew = [
 getSrc = ( path, imgWidth = defaultImgWidths, fileType = defaultFileType ) => {
 
 	if ( false === imgWidth || ( Array.isArray( imgWidth ) && ! imgWidth.length ) ) {
-		return `${ templateData.site.core.siteUrl }/${ path }`;
+		return `/${ path }`;
 	}
 
 	if ( Array.isArray( imgWidth ) ) {
 		imgWidth = Math.max( ...imgWidth );
 	}
-	return `${ templateData.site.core.siteUrl }/${ path }-${ imgWidth }.${ fileType }`;
+	return `/${ path }-${ imgWidth }.${ fileType }`;
 }
 
 getSrcset = ( path, imgWidths = defaultImgWidths, fileType = defaultFileType ) => {

@@ -13,11 +13,9 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Game launch site',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'City of Heroes redesign and migration screen 1',
 			},
 		],
@@ -25,6 +23,6 @@ module.exports = {
 		highlight: 'VGX Award for Best Multiplayer Game',
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

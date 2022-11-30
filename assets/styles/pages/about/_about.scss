@@ -11,6 +11,17 @@
 	border-bottom: 1px solid var( --color__line-secondary );
 }
 
+.is-about .page-heading__subtitle,
+.is-about .page-heading__title {
+	text-align: center
+}
+
+.is-about .page-heading__title {
+	margin-top: -3px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
 .about-page__content,
 .about-page__aside {
 	margin: 0 auto;

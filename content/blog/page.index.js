@@ -4,13 +4,13 @@ module.exports = {
 	post: {
 		type: 'blog-posts',
 		date: '09/18/2022',
-		title: 'About Me',
+		title: 'Blog Posts',
 		body: './index.md',
 		summary: '',
 		tags: [ 'website' ],
 	},
 	meta: {
-		subtitle: 'Originally a cat guy',
+		subtitle: 'Random Writings',
 		includeNestedChildren: true,
 		hasSidebar: false,
 		headerTitle: 'About Me',

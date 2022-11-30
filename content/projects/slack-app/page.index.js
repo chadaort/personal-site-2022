@@ -17,15 +17,12 @@ module.exports = {
 		projectPosition: 'lead developer',
 		hasSidebar: true,
 		disableImageTreatments: true,
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImage: {
-			src: `assets/images/content/${ assetNamespace }/banner`,
-			path: `assets/images/content/${ assetNamespace }`,
-			filePrefix: 'banner',
 			alt: 'Slack Application banner',
 		},
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),
 	},
 };

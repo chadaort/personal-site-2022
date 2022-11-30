@@ -1,30 +1,11 @@
-<%- include( '../helpers/img-utils' ) -%>
 <%- include( '../helpers/sorting' ) -%>
 
 <div id="main-content" class="content__main">
-	<div class="about-page">
-		<div class="about-page__content">
+	<div class="article__wrapper">
+		<div class="article__body">
 			<%- templateData.post.body %>
+			<div class="clear-fix"></div>
 		</div>
-		<aside class="about-page__aside">
-			<ul class="about-page__pics">
-				<li class="about-page__pics-li">
-					<a href="#" class="about-page__pics-a">
-						<img class="about-page__pics-img" src="<%= getSrc( 'assets/images/about/me.jpg', false ) %>">
-					</a>
-				</li>
-				<li class="about-page__pics-li">
-					<a href="#" class="about-page__pics-a">
-						<img class="about-page__pics-img" src="<%= getSrc( 'assets/images/about/bus.jpg', false ) %>">
-					</a>
-				</li>
-				<li class="about-page__pics-li">
-					<a href="#" class="about-page__pics-a">
-						<img class="about-page__pics-img" src="<%= getSrc( 'assets/images/about/howard.jpg', false ) %>">
-					</a>
-				</li>
-			</ul>
-		</aside>
 	</div>
 </div>
 
@@ -48,7 +29,8 @@
 								<%= company.post.title %>
 							</a>
 						</h3>
-						<p class="career-timeline__desc has-dark-bg"><%= company.post.summary %></p>
+						<% console.log( company.post.summary ) %>
+						<p class="career-timeline__desc has-dark-bg"><%- company.post.summary %></p>
 						<a href="<%= `${ templateData.site.core.siteUrl }/${ company.post.publicPath }` %>" class="career-timeline__cta has-dark-bg">Read More</a>
 					</div>
 				</div>

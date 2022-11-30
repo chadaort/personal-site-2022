@@ -77,10 +77,15 @@
 .project-grid__item {
 	margin: 0 calc( 50% - 50vw ) 35px calc( 50% - 50vw );
 	position: relative;
-	background-color: var( --project-grid__background-color );
+	background-color: transparent;
+
+	@include media-query( $start: tablet ) {
+		background-color: var( --project-grid__background-color );
+	}
 
 	.project-grid__item-thumb {
 		@extend %img__x;
+		width: 100%;
 	}
 
 	// @todo - Tempoarily stretching the first image which expands 2 cells.
@@ -125,6 +130,7 @@
 		&::after {
 			display: block;
 			z-index: -1;
+			border-radius: 3px;
 		}
 	}
 }
@@ -135,6 +141,10 @@
 	display: block;
 	position: relative;
 	overflow: hidden;
+
+	@include media-query( $start: tablet ) {
+		border-radius: 3px;
+	}
 }
 
 .project-grid__copy-wrapper {
@@ -185,7 +195,7 @@
 	margin-top: 5px;
 	margin-right: 10px;
 	color: var( --color__text-summary );
-	font-size: var( --font__small );
+	font-size: var( --font__size-summary );
 	line-height: 1.5;
 }
 

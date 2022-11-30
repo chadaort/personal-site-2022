@@ -1,0 +1,39 @@
+<h4 class="aside-content__title-wrapper">
+	<span class="aside-content__title">Blog Posts</span>
+</h4>
+
+<div class="aside-content__list">
+	<ul class="aside-content__list-ul">
+		<% for ( let i = 0; i < templateData.sidebar.length; i++ ) { %>
+			<% const item = templateData.sidebar[ i ]; %>
+			<li class="aside-content__list-li" role="none">
+				<article class="aside-content__list-item">
+
+					<a
+						class="aside-content__list--img-wrapper disable-img-treatment"
+						href="<%= `${ templateData.site.core.siteUrl }/${ item.post.publicPath }` %>">
+
+						<img
+							class="aside-content__list-img"
+							src="<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500` %>"
+							data-src="<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?size=1200` %>"
+							data-srcset="<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?size=480 480w` %>,
+								<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?size=700 700w` %>,
+								<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?size=900 900w` %>,
+								<%= `/assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png?size=1200 1200w` %>"
+							alt="<%= item.post.title %>"
+							data-lazy-load="pieces">
+					</a>
+
+					<div class="aside-content__list-details">
+						<h3 class="aside-content__list-title">
+							<a class="aside-content__list-title-a" href="#"><%= item.post.title %></a>
+						</h3>
+						<p class="aside-content__list-summary"><%= item.post.summary %></p>
+						<a class="aside-content__list-cta" href="<%= `${ templateData.site.core.siteUrl }/${ item.post.publicPath }` %>">Read More</a>
+					</div>
+				</article>
+			</li>
+		<% }; %>
+	</ul>
+</div>

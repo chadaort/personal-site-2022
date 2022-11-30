@@ -3,6 +3,7 @@
 //
 
 .header__menu-wrapper {
+	margin-top: 31px;
 	display: flex;
 	position: fixed;
 	top: 0;
@@ -12,9 +13,9 @@
 	max-width: 450px;
 	z-index: 28;
 	align-items: center;
-	transition: width 600ms;
-	transition-delay: 150ms;
-	background: var( --color__primary );
+	transition: width 500ms;
+	transition-delay: 50ms;
+	background: #{ $color__black-2 };
 
 	.header__menu--active & {
 		width: 80%;
@@ -30,6 +31,7 @@
 	}
 
 	@include media-query( $start: desktop ) {
+		margin-top: 0;
 		margin-left: auto;
 		top: auto;
 		left: auto;
@@ -51,10 +53,10 @@
 		position: absolute;
 		top: 1rem;
 		right: 1rem;
-		fill: #fff;
+		fill: #{ $color__white-f };
 
 		&:hover {
-			fill: #333;
+			fill: #eb5c6c;
 		}
 	}
 

@@ -2,8 +2,10 @@
 // Default article page styles.
 //
 
+@import "./article-body";
 @import "./content";
 @import "./feature";
+@import "./images";
 
 //
 // Article page utility navigation.
@@ -46,7 +48,9 @@
 		top: -2px;
 		bottom: -2px;
 		left: 0;
-		background: var( --color__accent-primary );
+		background: var( --color__primary-light );
+		//background: var( --color__accent-primary );
+		border-radius: 99px;
 
 		body[data-theme="dark"] & {
 			background: var( --color__primary );
@@ -99,56 +103,25 @@
 //
 // Content area styles.
 //
-.article__body {
-	overflow: auto;
+.article__wrapper {
+	margin: 2rem auto 2rem;
+	padding-bottom: 2rem;
+	position: relative;
+	max-width: 55rem;
 	font-weight: 400;
 
-	> :first-child {
-		margin-top: 0;
+	&:after {
+		content: '';
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		left: -5rem;
+		right: -5rem;
+		background: var( --color__line-primary );
 	}
 
-	img {
-		margin: 2.5rem auto;
-		max-width: 100%;
-		display: block;
-	}
-
-	@include media-query( $start: tablet ) {
-
-		img {
-			padding: 2rem;
-			border: 1px solid #ddd;
-		}
-
-		body[data-theme="dark"] & img {
-			background-color: #282828;
-			border-color: var(--color__line-tertiary);
-		}
-
-		img.img--no-border {
-			padding: 0;
-			border: none;
-		}
-
-		img.img--no-pad {
-			padding: 0;
-
-		}
-	}
-
-	a {
-		position: relative;
-		white-space: nowrap;
-
-		&:hover::after {
-			content: '';
-			height: 2px;
-			position: absolute;
-			bottom: -2px;
-			left: 0;
-			right: 0;
-			background: var( --color__secondary );
-		}
+	@include media-query( $start: desktop ) {
+		margin-top: 3rem;
 	}
 }
 
@@ -192,6 +165,10 @@
 .article__extra-screens-li {
 	margin-right: 25px;
 	flex: 0 0 150px;
+
+	&::after {
+		display: none;
+	}
 
 	&:last-child {
 		margin-right: 0;

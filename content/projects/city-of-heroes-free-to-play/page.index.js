@@ -13,27 +13,21 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Launches free to play',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'City of Heroes screen 1',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen2-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen2.jpg`,
 				alt: 'City of Heroes screen 2',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen3-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen3.jpg`,
 				alt: 'City of Heroes screen 3',
 			},
 		],
 		projectStillActive: false,
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

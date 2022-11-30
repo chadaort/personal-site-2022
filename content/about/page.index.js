@@ -4,18 +4,15 @@ module.exports = {
 	post: {
 		type: 'about',
 		date: '01/01/2018',
-		title: 'About Me',
+		title: 'Get to know me',
 		body: './index.md',
 		summary: '',
 		tags: [ 'website' ],
 	},
 	meta: {
-		subtitle: 'Application Developer',
+		subtitle: 'Working as an application developer',
 		includeNestedChildren: true,
 		hasSidebar: false,
-		headerTitle: 'About Me',
-		headerSubtitle: 'Just some history',
-		pageTitle: 'A little bit about myself',
 	},
 	filters: {
 		contentData: ( data, siteMap ) => {

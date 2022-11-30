@@ -2,7 +2,6 @@
 // Contact page styles.
 //
 
-@import "./hero";
 @import "./form";
 
 .is-contact {
@@ -18,13 +17,13 @@
 	// Using pixels because this ensures fixed size image is pushed down far enough.
 	padding-bottom: 200px;
 	background-color: var( --color__accent-primary );
-	background-image: url( "#{$site-url}/assets/images/bg-wave-light.png" );
+	background-image: url( "/assets/images/bg-wave-light.png" );
 	background-size: 185% auto;
 	background-repeat: no-repeat;
 	background-position: bottom left;
 
 	body[data-theme="dark"] & {
-		background-image: url( "#{$site-url}/assets/images/bg-wave-dark.png" );
+		background-image: url( "/assets/images/bg-wave-dark.png" );
 	}
 
 	@include media-query( $start: desktop ) {

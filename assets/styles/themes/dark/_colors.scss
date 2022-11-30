@@ -29,12 +29,17 @@ body[data-theme="dark"],
 	--color__text-body:            #{ $color__white-d };
 	--color__text-summary:         #{ $color__white-c };
 	--color__text-muted:           #{ $color__white-c };
+	--color__text-inverted:        #{ $color__black-1 };
 
 	--color__primary:      #66b9a9;
 	--color__primary-text: #69cab5;
 
 	--color__secondary: #eb5668;
 	--color__secondary-text: #eb5c6c;
+	--color__secondary-line: var( --color__secondary-text-dark );
+
+	--color__mobile-menu-bg:      #{ $color__white-f };
+	--color__mobile-menu-overlay: #{ $color__black-0 };
 
 	// Syntax highlighting
 	--color__syntax-base:        #c7d8ed;

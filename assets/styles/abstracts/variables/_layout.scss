@@ -1,11 +1,12 @@
 $device-breakpoints: (
-	mobile:  320px,
-	mobile-lg: 480px,
-	tablet:  740px,
-	tablet-lg: 880px,
-	desktop: 980px,
+	mobile:     320px,
+	mobile-lg:  480px,
+	tablet:     740px,
+	tablet-lg:  880px,
+	desktop:    980px,
 	desktop-lg: 1100px,
-	wide:    1400px,
+	wide:       1400px,
+	wide-lg:    1500px,
 );
 
 // Gutter margins

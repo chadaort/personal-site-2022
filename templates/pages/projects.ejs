@@ -1,4 +1,3 @@
-<%- include( '../helpers/img-utils' ) -%>
 <%- include( '../helpers/sorting' ) -%>
 
 <div id="main-content" class="content__main">
@@ -13,12 +12,15 @@
 						tabindex="-1"
 					>
 						<img
-							class="project-grid__item-thumb"
-							src="<%= getSrc( project.meta.thumb, [ 972 ] ) %>"
-							srcset="<%= getSrcset( project.meta.thumb, [ 972 ] ) %>"
-							sizes="( min-width: 980px ) 50vw, 100vw"
+							class="project-grid__item-thumb lazy"
+							src="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500` %>"
+							data-src="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=1200` %>"
+							data-srcset="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=480 480w` %>,
+								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=700 700w` %>,
+								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=900 900w` %>,
+								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=1200 1200w` %>"
 							alt="<%= project.post.title %>"
-						/>
+							data-lazy-load />
 					</a>
 					<div class="project-grid__copy-wrapper">
 						<% if ( project.meta.highlight ) { %>

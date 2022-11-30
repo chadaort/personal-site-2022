@@ -10,6 +10,15 @@
 	image-rendering: -webkit-optimize-contrast;
 }
 
+%img__x-fit {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	object-position: center top;
+	image-rendering: -webkit-optimize-contrast;
+}
+
 // Taller images.
 %img__y {
 	max-height: 100%;

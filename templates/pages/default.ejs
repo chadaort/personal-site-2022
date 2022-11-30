@@ -1,5 +1,3 @@
-<%- include( '../helpers/img-utils' ) -%>
-
 <div id="main-content" class="content__main">
 
 	<% if ( 'project' === templateData.post.type || 'company' === templateData.post.type || 'blog' === templateData.post.type ) { %>
@@ -27,38 +25,51 @@
 		</div>
 	<% } %>
 
-	<div class="article__body">
-		<%- templateData.post.body %>
-	</div>
+	<div class="article__wrapper">
 
-	<% if ( 'project' === templateData.post.type && templateData.meta.projectURL ) { %>
-		<div class="article__cta">
-			<a class="article__cta-btn" href="<%= templateData.meta.projectURL %>">
-				<%= templateData.meta.projectStillActive ? 'View Project' : 'View Property' %>
-			</a>
+		<div class="article__body">
+			<%- templateData.post.body %>
 		</div>
-	<% } %>
 
-	<% if ( 'project' === templateData.post.type && templateData.meta.featureImageSet && templateData.meta.featureImageSet.length > 2 ) { %>
-		<% const extraScreens = templateData.meta.featureImageSet.slice( 2, templateData.meta.featureImageSet.length ); %>
-		<div class="article__extra-screens" data-screen-count="<%= extraScreens.length %>">
-
-			<div class="article__extra-screens-heading">
-				<h3 class="article__extra-screens-heading-main">Additional Project Views</h3>
-				<h4 class="article__extra-screens-heading-sub">More project screens</h4>
+		<% if ( 'project' === templateData.post.type && templateData.meta.projectURL ) { %>
+			<div class="article__cta">
+				<a class="article__cta-btn" href="<%= templateData.meta.projectURL %>">
+					<%= templateData.meta.projectStillActive ? 'View Project' : 'View Property' %>
+				</a>
 			</div>
-			<ul class="article__extra-screens-ul has-dark-bg">
-				<% extraScreens.forEach( screen => { %>
-					<li class="article__extra-screens-li">
-						<a class="article__extra-screens-a" href="#">
-							<i class="icon icon--sm icon--circle icon--screenshot"></i>
-							<img class="article__extra-screens-img" src="<%= getSrc( screen.src, [972] ) %>" alt="<%= screen.alt %>" />
-						</a>
-					</li>
-				<% } ) %>
-			</ul>
+		<% } %>
 
-		</div>
-	<% } %>
+		<% if ( 'project' === templateData.post.type && templateData.meta.featureImageSet && templateData.meta.featureImageSet.length > 2 ) { %>
+			<% const extraScreens = templateData.meta.featureImageSet.slice( 2, templateData.meta.featureImageSet.length ); %>
+			<div class="article__extra-screens" data-screen-count="<%= extraScreens.length %>">
+
+				<div class="article__extra-screens-heading">
+					<h3 class="article__extra-screens-heading-main">Additional Project Views</h3>
+					<h4 class="article__extra-screens-heading-sub">More project screens</h4>
+				</div>
+				<ul class="article__extra-screens-ul has-dark-bg">
+					<% extraScreens.forEach( ( screen, i ) => { %>
+						<li class="article__extra-screens-li">
+							<a
+								class="article__extra-screens-a"
+								href="#"
+								data-lightbox-img="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png` %>">
+								<i class="icon icon--sm icon--circle icon--screenshot"></i>
+								<img
+									class="article__extra-screens-img"
+									src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=300` %>"
+									data-src="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=600` %>"
+									data-srcset="<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=480 480w` %>,
+										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=600 600w` %>"
+									alt="<%= screen.alt %>"
+									data-lazy-load />
+							</a>
+						</li>
+					<% } ) %>
+				</ul>
+
+			</div>
+		<% } %>
+	</div>
 
 </div>

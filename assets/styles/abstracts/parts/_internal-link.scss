@@ -15,20 +15,6 @@
 		margin-bottom: 2rem;
 		padding-bottom: 2rem;
 		position: relative;
-
-		&::after {
-			content: "";
-			height: 1px;
-			position: absolute;
-			left: -0.75rem;
-			right: -0.5rem;
-			bottom: 0;
-			background-color: var( --color__line-tertiary );
-		}
-
-		&:last-child::after {
-			display: none;
-		}
 	}
 
 	.#{ $el_prefix }img-wrapper {
@@ -36,7 +22,7 @@
 	}
 
 	.#{ $el_prefix }img {
-		@extend %img__x;
+		@extend %img__x-fit;
 	}
 
 	.#{ $el_prefix }details {
@@ -44,9 +30,9 @@
 	}
 
 	.#{ $el_prefix }title {
-		margin: 0.5em 0 0.3em;
-		font-size: var( --font__large );
-		font-weight: 400;
+		margin: 0.65em 0 0.3em;
+		font-size: var( --font__scale-1 );
+		font-weight: 500;
 	}
 
 	.#{ $el_prefix }title-a {
@@ -60,7 +46,7 @@
 	.#{ $el_prefix }summary {
 		margin: 0;
 		color: var( --color__text-summary );
-		font-size: var( --font__size-small );
+		font-size: var( --font__scale-0 );
 		line-height: 1.45;
 	}
 

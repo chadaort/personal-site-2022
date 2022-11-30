@@ -13,21 +13,15 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Bi-directional game data',
-		thumb: `assets/images/content/${ assetNamespace }/thumb`,
+		imageNamespace: assetNamespace,
 		featureImageSet: [
 			{
-				src: `assets/images/content/${ assetNamespace }/screen1-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen1.jpg`,
 				alt: 'My Aion screen 1',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen2-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen2.jpg`,
 				alt: 'My Aion screen 2',
 			},
 			{
-				src: `assets/images/content/${ assetNamespace }/screen3-thumb`,
-				raw: `assets/images/content/${ assetNamespace }/screen3.jpg`,
 				alt: 'My Aion screen 3',
 			},
 		],
@@ -35,6 +29,6 @@ module.exports = {
 		projectStillActive: false,
 	},
 	filters: {
-		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 3, 'random' ),
+		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
 	},
 };

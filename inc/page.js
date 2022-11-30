@@ -43,17 +43,55 @@ const getRouteData = ( contentFile, siteMap ) => {
 };
 
 /**
+ * Gets the page image URL.
+ *
+ * @param {object} item Page data
+ * @returns {string} Image URL
+ */
+const getPageImage = ( item ) => {
+
+	if ( ! item.post.type || ! item.meta.imageNamespace ) {
+		return '/assets/images/default-page-image.png';
+	}
+
+	const thumbPath = `assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png`;
+	if ( fs.existsSync( path.join( process.cwd(), thumbPath ) ) ) {
+		return `https://www.chadort.com/${ thumbPath }`;
+	}
+
+	return '/assets/images/default-page-image.png';
+};
+
+/**
+ * Gets the page summary.
+ *
+ * @param {object} item Page data
+ * @returns {string} Page description
+ */
+const getPageDescription = ( item ) => {
+
+	if ( ! item.meta.summary ) {
+		return item.meta.summary;
+	}
+
+	return 'Default page description';
+};
+
+/**
  * Gets the page and meta data for the route using the content file path.
  *
  * @param {string} contentFile The *.index.js file path for the route
  * @returns {object} Page and meta data
  */
-const getPostData = contentFile => {
+const getPostData = ( contentFile ) => {
 	contentFile = contentFile ? contentFile : 'content/page.404.js';
 	const contentPath = getRoutePath( contentFile ).content;
 	const data = require( path.resolve( process.cwd(), contentFile ) );
 	data.post = processMarkdownInProps( data.post, contentPath );
 	data.post.publicPath = getRoutePath( contentFile ).public;
+	data.post.pageDescription = getPageDescription( data );
+	data.post.ogImage = getPageImage( data );
+
 	data.meta = data.meta ? processMarkdownInProps( data.meta, contentPath ) : [];
 	return data;
 };
@@ -80,7 +118,7 @@ const processMarkdownInProps = ( pageData, pagePath ) => {
  * @param {string} contentFile The *.index.js file path for the route
  * @returns {object} Route location details
  */
-const getRoutePath = contentFile => {
+const getRoutePath = ( contentFile ) => {
 	const fileName = contentFile.split( '/' ).reverse()[0].split( '.' )[1];
 	const contentPath = contentFile.substring( 0, contentFile.lastIndexOf( '/' ) + 1 );
 	let publicPath = contentPath.split( 'content/' )[1] ? contentPath.split( 'content/' )[1] : '/';
@@ -108,7 +146,7 @@ const getRoutePath = contentFile => {
  * @param {object} pageData Page data
  * @returns {string|boolean} Either an error message or true
  */
-const validateData = pageData => {
+const validateData = ( pageData ) => {
 
 	// Ensure that we have a data property.
 	if ( ! pageData.post ) {
@@ -116,7 +154,7 @@ const validateData = pageData => {
 	}
 
 	// Ensure the data property contains all properties defined in REQUIRED_PROPS
-	if ( ! REQUIRED_PROPS.every( field => Object.prototype.hasOwnProperty.call( pageData.post, field ) ) ) {
+	if ( ! REQUIRED_PROPS.every( ( field ) => Object.prototype.hasOwnProperty.call( pageData.post, field ) ) ) {
 		return `pageData.post must include the following properties ${ REQUIRED_PROPS.join( ', ' ) }.`;
 	}
 
@@ -137,10 +175,10 @@ const getPostsByType = ( type, siteMap, count = 'all', sort = 'ascending' ) => {
 	let postList = [];
 
 	// Get a list of posts that match a certain type.
-	const posts = siteMap.filter( data => data.type === type );
+	const posts = siteMap.filter( ( data ) => data.type === type );
 
 	// Get post data for each item.
-	posts.forEach( post => postList.push( getPostData( post.contentFile ) ) );
+	posts.forEach( ( post ) => postList.push( getPostData( post.contentFile ) ) );
 
 	postList = sortPosts( postList, sort );
 
@@ -165,10 +203,10 @@ const getPostsByTag = ( tag, siteMap, count = 'all', sort = 'ascending' ) => {
 	let postList = [];
 
 	// Get a list of posts that have a certain tag.
-	const posts = siteMap.filter( data => data.tags.includes( tag ) );
+	const posts = siteMap.filter( ( data ) => data.tags.includes( tag ) );
 
 	// Get post data for each item.
-	posts.forEach( post => postList.push( getPostData( post.contentFile ) ) );
+	posts.forEach( ( post ) => postList.push( getPostData( post.contentFile ) ) );
 
 	postList = sortPosts( postList, sort );
 

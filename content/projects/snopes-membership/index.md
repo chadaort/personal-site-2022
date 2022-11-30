@@ -2,15 +2,29 @@ The spread of misinformation is a serious problem that needs to be addressed. [F
 
 Our subscription billing system is powered by [Chargebee](https://www.chargebee.com/), and [Auth0](https://auth0.com/) serves as our authentication and authorization system. Additionally, we implemented [single sign-on](https://auth0.com/docs/authenticate/single-sign-on) (SSO) to allow users to log in to the site as well external system with one set of credentials. Here is a diagram showing roughly how that looked:
 
-<img class="img--no-pad" src="/assets/images/content/membership/diagram-1.png" alt="Snopes infrastructure">
-
 ## Authentication and authorization
+
+<figure class="image-figure align-right image-style-b">
+	<img
+		src="/assets/images/project/membership/membership--diagram-1.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+		data-src="/assets/images/project/membership/membership--diagram-1.png?size=972" 
+		alt="Membership flow"
+		data-lazy-load>
+	<figcaption>Membership flow</figcaption>
+</figure>
 
 When it comes to authentication and authorization, you want a secure, easy-to-use, and scalable solution. We considered Okta because we had previously integrated it for staff, but Auth0 is very developer friendly and geared towards applications. In addition, it’s a fantastic solution and free for up to 7k active users. Auth0 created a diagram that outlines the flow pretty well:
 
-<img class="img--no-pad" src="/assets/images/content/membership/diagram-2.png" alt="Auth0 flow diagram">
-
 You can configure a lot in Auth0, but the basic setup is pretty straightforward. We created a tenant for production and one for each of the lower environments. We managed these tenants and the configuration using [Pulumi](https://www.pulumi.com/) which uses the [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/auth0/latest/docs). If you’re a programmer and haven’t used Pulumi yet, you should give it a try. In the end, this provided us a way to manage our Auth0 tenants in code and to release changes using [GitHub actions](https://github.com/features/actions).
+
+<figure class="image-figure align-left image-border">
+	<img
+		src="/assets/images/project/membership/membership--diagram-2.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+		data-src="/assets/images/project/membership/membership--diagram-2.png?size=972" 
+		alt="Auth0 flow diagram"
+		data-lazy-load>
+	<figcaption>Auth0 flow diagram</figcaption>
+</figure>
 
 Auth0 provides auth components for all the primary use cases and is entirely customizable. They have a new [Universal login](https://auth0.com/docs/customize/universal-login-pages/universal-login-page-templates) that looks exciting, but I implemented [v9 using the SDK](https://auth0.com/docs/libraries/auth0js). The difference between the classic version and v9 with the SDK was that the latter was fully customizable. I was responsible for building out the components in their entirety and using the SDK to process the form submissions.
 

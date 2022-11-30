@@ -1,16 +1,28 @@
-<%- include( '../../helpers/img-utils' ) %>
-
 <section class="hero-intro" aria-labelledby="hero-intro">
 	<div class="hero-intro__wrapper">
 		<span class="hero-intro__copy-bg">
-			<img class="hero-intro__copy-bg-img" src="<%= getSrc( 'assets/images/light-intro-text-bg-desktop.png', false ) %>" />
-			<img class="hero-intro__copy-bg-img--dark" src="<%= getSrc( 'assets/images/light-intro-text-bg-desktop-dark.png', false ) %>" />
+			<img
+				class="hero-intro__copy-bg-img"
+				src="/assets/images/light-intro-text-bg-desktop.png?size=1200%26quality=100"
+				data-srcset="/assets/images/light-intro-text-bg-desktop.png?size=480%26quality=100 480w,
+					/assets/images/light-intro-text-bg-desktop.png?size=700%26quality=100 700w,
+					/assets/images/light-intro-text-bg-desktop.png?size=900%26quality=100 900w,
+					/assets/images/light-intro-text-bg-desktop.png?size=1200%26quality=100 1200w"
+				alt="Background hero image">
+			<img
+				class="hero-intro__copy-bg-img--dark"
+				src="/assets/images/light-intro-text-bg-desktop-dark.png?size=1200%26quality=100"
+				data-srcset="/assets/images/light-intro-text-bg-desktop-dark.png?size=480%26quality=100 480w,
+					/assets/images/light-intro-text-bg-desktop-dark.png?size=700%26quality=100 700w,
+					/assets/images/light-intro-text-bg-desktop-dark.png?size=900%26quality=100 900w,
+					/assets/images/light-intro-text-bg-desktop-dark.png?size=1200%26quality=100 1200w"
+				alt="Dark background hero image">
 		</span>
 		<div class="hero-intro__copy">
 			<h1 id="hero-intro" class="hero-intro__title">
 				<span class="hero-intro__line">
 					Hello, my name is
-					<span class="hero-intro__no-break"><span class="hero-intro__name">Chad Ort</span>.</span>
+					<span class="hero-intro__no-break"><span class="hero-intro__name">Chad Ort</span></span>
 				</span>
 				<span class="hero-intro__line">
 					I'm a short-stack developer and have worked in the
