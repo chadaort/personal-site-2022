@@ -22,7 +22,7 @@
 	background-repeat: no-repeat;
 	background-position: bottom left;
 
-	body[data-theme="dark"] & {
+	[data-theme="dark"] & {
 		background-image: url( "/assets/images/bg-wave-dark.png" );
 	}
 

@@ -45,7 +45,7 @@ Template to output an invidual featured image or a set of them.
 										<%= `/assets/images/${ templateData.post.type }/${ templateData.meta.imageNamespace }/${ templateData.meta.imageNamespace }--thumb-screen${ i + 1 }.png?size=972 972w` %>"
 									alt="<%= templateData.meta.featureImageSet[ i ].alt %>"
 									data-lazy-load />
-								<span class="page-feature__hover-bg" role="none"></span>
+								<span class="page-feature__hover-bg" role="presentation"></span>
 								<i class="page-feature__img-signal icon icon--circle icon--screenshot"></i>
 							</a>
 							<a id="<%= `lightbox-image-${ i + 1 }` %>>" class="lightbox" href="#">
@@ -58,7 +58,7 @@ Template to output an invidual featured image or a set of them.
 									alt="<%= `${ templateData.meta.featureImageSet[ i ].alt } - Full screen` %>">
 							</a>
 						<% } else { %>
-							<span class="page-feature__img-empty" role="none"></span>
+							<span class="page-feature__img-empty" role="presentation"></span>
 						<% } %>
 					</figure>
 

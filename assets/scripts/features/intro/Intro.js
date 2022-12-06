@@ -138,6 +138,7 @@ export default class Intro {
 
 		this.canvas = document.createElement( 'canvas' );
 		this.canvas.className = 'intro-grid';
+		this.canvas.style.opacity = 0;
 		this.container.appendChild( this.canvas );
 
 		this.resizeCanvas = document.createElement( 'canvas' );
@@ -153,7 +154,7 @@ export default class Intro {
 	 * @param reload
 	 * @returns {undefined} Void
 	 */
-	setup( container, reload = false ) {
+	async setup( container, reload = false ) {
 
 		this.ctx = this.canvas.getContext( '2d' );
 		this.canvas.width = this.container.getBoundingClientRect().width;
@@ -162,7 +163,7 @@ export default class Intro {
 
 		this.gridAssets = [];
 		this.grid = this.calcGrid();
-		this.theme = document.body.getAttribute( 'data-theme' );
+		this.theme = document.documentElement.getAttribute( 'data-theme' );
 		this.deviceSize = this.getDeviceSize();
 		this.orientation = this.canvas.width > this.canvas.height ? 'landscape' : 'portrait';
 		this.sceneImgs = {};
@@ -186,11 +187,43 @@ export default class Intro {
 			this.changeHandler();
 		}
 
+		await this.onSceneReady();
+		document.querySelector( '.hero-intro' ).classList.add( 'active' );
+		this.loadAssets();
+
 		this.animationFrame = window.requestAnimationFrame( () => this.draw() );
 	}
 
+	async onSceneReady() {
+
+		const images = [
+			document.querySelector( '.hero-intro__copy-bg-img' ),
+			document.querySelector( '.hero-intro__copy-bg-img--dark' ),
+		];
+
+		if ( images.map( ( image ) => image.complete ).length === images.length ) {
+			return;
+		}
+
+		/**
+		 * Loads a scene image.
+		 *
+		 * @param {HTMLImageElement} domImage DOM image
+		 * @returns {Promise}
+		 */
+		const loadImage = async ( domImage ) => {
+			const image = new Image();
+			image.addEventListener( 'load', () => {
+				return;
+			} );
+			image.src = domImage.src;
+		};
+
+		await Promise.all( images.map( ( image ) => loadImage( image ) ) );
+	}
+
 	/**
-	 * Loads canvas assets.
+	 * Prepares canvas assets.
 	 *
 	 * @returns {undefined} Void
 	 */
@@ -200,6 +233,11 @@ export default class Intro {
 		let shuffledGridAssets = this.constructor.shuffle( GRID_ASSETS.map( ( x ) => {
 			return { ...x };
 		} ) );
+
+		// Prevent videos on mobile to improve the lighthouse score.
+		if ( this.deviceSize === 'mobile' ) {
+			shuffledGridAssets = shuffledGridAssets.filter( ( item ) => item.type === 'image' );
+		}
 
 		shuffledGridAssets = shuffledGridAssets.map( ( item ) => {
 
@@ -235,7 +273,14 @@ export default class Intro {
 			}
 			currIndex++;
 		}
+	}
 
+	/**
+	 * Loads canvas assets.
+	 *
+	 * @returns {undefined} Void
+	 */
+	loadAssets() {
 		for ( let i = 0; i < this.gridAssets.length; i++ ) {
 			if ( this.gridAssets[i].path ) {
 				const pathParts = this.gridAssets[i].path.split( '.' );

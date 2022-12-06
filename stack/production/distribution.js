@@ -48,7 +48,7 @@ module.exports = ( bucket, apiGateway, certificate ) => new aws.cloudfront.Distr
 			originId: apiGateway.urn,
 			// Removing the protocol and the stageName suffix from the apiGateway URL.
 			// @todo - Find another property that is just the domain name so that we don't need to manipulate the string.
-			domainName: apiGateway.url.apply( url => url.substring( 0, url.indexOf( `/${ config.apiVersion }/` ) ).slice( 'https://'.length ) ),
+			domainName: apiGateway.url.apply( ( url ) => url.substring( 0, url.indexOf( `/${ config.apiVersion }/` ) ).slice( 'https://'.length ) ),
 			customOriginConfig: {
 				originProtocolPolicy: 'https-only',
 				httpPort: 80,
@@ -67,15 +67,14 @@ module.exports = ( bucket, apiGateway, certificate ) => new aws.cloudfront.Distr
 		viewerProtocolPolicy: 'redirect-to-https',
 		allowedMethods: [ 'HEAD', 'GET', 'OPTIONS' ],
 		cachedMethods: [ 'HEAD', 'GET', 'OPTIONS' ],
-
 		forwardedValues: {
 			cookies: { forward: 'none' },
 			queryString: false,
 		},
+		compress: true,
 		minTtl: 0,
 		defaultTtl: 600,
 		maxTtl: 600,
-
 		lambdaFunctionAssociations: [
 			{
 				eventType: 'viewer-request',

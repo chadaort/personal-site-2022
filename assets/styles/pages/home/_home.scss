@@ -345,7 +345,19 @@
 	color: var( --color__text-summary );
 
 	a {
-		font-weight: 400;
-		white-space: nowrap;
+		color: var( --color__text-summary );
+
+		span {
+			font-weight: 400;
+		}
+
+		span,
+		&:hover {
+			color: var( --color__secondary-text );
+			text-decoration: underline;
+			text-underline-offset: 4px;
+			text-decoration-color: var( --color__secondary );
+			text-decoration-thickness: 2px;
+		}
 	}
 }

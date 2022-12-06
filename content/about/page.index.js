@@ -6,7 +6,6 @@ module.exports = {
 		date: '01/01/2018',
 		title: 'Get to know me',
 		body: './index.md',
-		summary: '',
 		tags: [ 'website' ],
 	},
 	meta: {

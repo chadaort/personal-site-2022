@@ -52,7 +52,7 @@
 		//background: var( --color__accent-primary );
 		border-radius: 99px;
 
-		body[data-theme="dark"] & {
+		[data-theme="dark"] & {
 			background: var( --color__primary );
 		}
 	}
@@ -214,7 +214,7 @@
 	}
 
 	.has-dark-bg &,
-	body[data-theme="dark"] & {
+	[data-theme="dark"] & {
 		fill: #{ $color__black-3 };
 		background-color: #{ $color__white-f };
 	}

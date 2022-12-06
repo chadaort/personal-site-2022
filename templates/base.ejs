@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="en">
+
+	<script>
+		if ( window.localStorage.getItem( 'theme' ) )	{
+			document.documentElement.setAttribute( 'data-theme', window.localStorage.getItem( 'theme' ) );
+		} else if ( window.matchMedia( '(prefers-color-scheme: dark)' ) ) {
+			document.documentElement.setAttribute( 'data-theme', 'dark' );
+		}
+	</script>
+
 	<%- include( './helpers/class-builder' ) -%>
 	<head>
 		<%- include( 'main/head' ) %>
 	</head>
 
 	<body class="<%= buildBodyClass( templateData ) %>">
-
-		<script>
-			if ( window.localStorage.getItem( 'theme' ) )	{
-				document.body.setAttribute( 'data-theme', window.localStorage.getItem( 'theme' ) );
-			} else if ( window.matchMedia( '(prefers-color-scheme: dark)' ) ) {
-				document.body.setAttribute( 'data-theme', 'dark' );
-			}
-		</script>
 
 		<div class="site__frame-wrapper">
 			<div id="site-frame" class="site__frame">

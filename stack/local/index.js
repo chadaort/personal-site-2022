@@ -12,12 +12,12 @@ const SOURCE_ASSETS = false;
 
 const app = express();
 
-//const staticPath = process.cwd();
+const staticPath = process.cwd();
 
-const staticPath = SOURCE_ASSETS ? process.cwd() : path.join( process.cwd(), 'dist' );
+//const staticPath = path.join( process.cwd(), 'dist' );
 app.disable( 'view cache' );
 app.set( 'view engine', 'ejs' );
-app.set( 'views', path.join( process.cwd(), 'dist' ) );
+app.set( 'views', path.join( process.cwd(), 'templates' ) );
 app.use( express.static( staticPath ) );
 
 sitemapHandlers.get()
@@ -39,8 +39,7 @@ sitemapHandlers.get()
 
 			 const templateData = pageHandler.getRouteData( post.contentFile, sitemap );
 			 const baseTemplate = templateData && templateData.meta.baseTemplate ? templateData.meta.baseTemplate : 'base';
-			 //return res.render( baseTemplate, { templateData } );
-			 res.sendFile( path.join( process.cwd(), 'dist' ) + '/index.html' );
+			 return res.render( baseTemplate, { templateData } );
 		 } );
 	 } )
 	 .then( () => app.listen( process.env.PORT || 3000 ) )

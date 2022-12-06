@@ -3,15 +3,17 @@
 	<section class="featured-companies" aria-labelledby="featured-companies-title">
 
 		<div class="featured-companies__content">
-			<h2 id="featured-companies-title" class="featured-companies__title">I currently <span class="featured-companies__company">work for Snopes</span> as the lead developer supporting our fact checking initiatives.</h2>
-			<a class="featured-companies__cta" href="<%= templateData.site.core.siteUrl %>/about/companies">View work history</a>
+			<h2 id="featured-companies-title" class="featured-companies__title">I <span class="featured-companies__company">work for Snopes</span> as the lead developer supporting our fact checking initiatives.</h2>
+			<a class="featured-companies__cta" href="<%= templateData.site.core.siteUrl %>/about/#work-history">View work history</a>
 		</div>
 
 		<div class="featured-companies__visual">
 			<ul class="featured-companies__company-ul">
 				<% templateData.companies.forEach( company => { %>
 					<li class="featured-companies__company-li">
-						<h3 class="featured-companies__company-title"><a class="featured-companies__company-a" href="<%= company.post.publicPath %>"><%= company.post.shortTitle ?? company.post.title %></a></h3>
+						<h3 class="featured-companies__company-title">
+							<a class="featured-companies__company-a" href="<%= `${ templateData.site.core.siteUrl }/${ company.post.publicPath }` %>"><%= company.post.shortTitle ?? company.post.title %></a>
+						</h3>
 						<h4 class="featured-companies__company-type"><%= company.meta.companyType %></h4>
 					</li>
 				<% } ); %>
@@ -49,9 +51,9 @@
 			<% templateData.blog.forEach( blogPost => { %>
 				<li class="featured-work__li">
 					<h3 class="featured-work__item-title">
-						<a class="featured-work__item-title-a" href="<%= blogPost.post.publicPath %>"><%= blogPost.post.title %></a>
+						<a class="featured-work__item-title-a" href="<%= `${ templateData.site.core.siteUrl }/${ blogPost.post.publicPath }` %>"><%= blogPost.post.title %></a>
 					</h3>
-					<p class="featured-work__item-summary"><%= blogPost.post.summary %> <a href="<%= blogPost.post.publicPath %>">read more</a></p>
+					<p class="featured-work__item-summary"><%= blogPost.post.summary %> <a href="<%= `${ templateData.site.core.siteUrl }/${ blogPost.post.publicPath }` %>"><%- blogPost.meta.anchorText %></a></p>
 				</li>
 			<% } ) %>
 		</ul>

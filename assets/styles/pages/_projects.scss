@@ -54,7 +54,7 @@
 	--project-grid__background-color: transparent;
 	--project-grid__border-color: #{ $color__white-d };
 
-	body[data-theme="dark"] & {
+	[data-theme="dark"] & {
 		--project-grid__background-color: #{ $color__black-3 };
 		--project-grid__border-color: transparent;
 	}
@@ -106,7 +106,7 @@
 }
 
 .project-grid__item-wrapper {
-	@extend %border-animation;
+	//@extend %border-animation;
 	height: 100%;
 
 	&::before,

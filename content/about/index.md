@@ -4,6 +4,9 @@ My name is Chad Ort, and I am currently the Lead Developer at [Snopes](https://w
 	<img
 		src="/assets/images/about/hiking.jpg?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
 		data-src="/assets/images/about/hiking.jpg?size=972"
+		data-srcset="/assets/images/about/hiking.jpg?size=480 480w,
+			/assets/images/about/hiking.jpg?size=720 720w,
+			/assets/images/about/hiking.jpg?size=972 972w"
 		alt="Hiking"
 		data-lazy-load>
 	<figcaption>Hiking</figcaption>
@@ -14,7 +17,10 @@ I learned to program using Pascal in high school and worked at a computer repair
 <figure class="image-figure align-far-left">
 	<img
 		src="/assets/images/about/camping-trip.jpg?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
-		data-src="/assets/images/about/camping-trip.jpg?size=972" 
+		data-src="/assets/images/about/camping-trip.jpg?size=972"
+		data-srcset="/assets/images/about/camping-trip.jpg?size=480 480w,
+			/assets/images/about/camping-trip.jpg?size=720 720w,
+			/assets/images/about/camping-trip.jpg?size=972 972w"
 		alt="Camping with the bus"
 		data-lazy-load>
 	<figcaption>Camping with the bus</figcaption>
@@ -27,7 +33,10 @@ The pandemic hit at the beginning of 2020, and the tiny house quickly became too
 <figure class="image-figure extra-wide">
 	<img
 		src="/assets/images/about/hiking-in-alaska.jpg?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
-		data-src="/assets/images/about/hiking-in-alaska.jpg?size=972" 
+		data-src="/assets/images/about/hiking-in-alaska.jpg?size=972"
+		data-srcset="/assets/images/about/hiking-in-alaska.jpg?size=480 480w,
+			/assets/images/about/hiking-in-alaska.jpg?size=720 720w,
+			/assets/images/about/hiking-in-alaska.jpg?size=972 972w"
 		alt="Hiking in Alaska"
 		data-lazy-load>
 	<figcaption>Hiking in Alaska</figcaption>

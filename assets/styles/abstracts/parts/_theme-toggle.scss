@@ -78,11 +78,11 @@ $theme-active-prefix: ".theme-control--";
 			animation-duration: 0ms;
 		}
 
-		body[data-theme="light"] #{ $parent } & {
+		[data-theme="light"] #{ $parent } & {
 			animation-name: slide-theme-toggle-light;
 		}
 
-		body[data-theme="dark"] #{ $parent } & {
+		[data-theme="dark"] #{ $parent } & {
 			animation-name: slide-theme-toggle-dark;
 			fill: var( --theme-toggle-active-circle-color );
 		}

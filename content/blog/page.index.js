@@ -6,7 +6,6 @@ module.exports = {
 		date: '09/18/2022',
 		title: 'Blog Posts',
 		body: './index.md',
-		summary: '',
 		tags: [ 'website' ],
 	},
 	meta: {

@@ -57,7 +57,7 @@
 
 	@include media-query( $start: tablet ) {
 
-		body[data-theme="dark"] & img {
+		[data-theme="dark"] & img {
 			background-color: #282828;
 			border-color: var(--color__line-tertiary);
 		}

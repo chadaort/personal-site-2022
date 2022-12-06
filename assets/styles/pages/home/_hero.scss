@@ -6,6 +6,18 @@
 	position: relative;
 	overflow: hidden;
 	background-color: #fff;
+
+	.loader {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		opacity: 1;
+		transition: opacity 500ms ease-in-out;
+	}
+
+	&.active .loader {
+		opacity: 0;
+	}
 }
 
 .hero-intro,
@@ -21,36 +33,68 @@
 	background-color: #222;
 }
 
+@keyframes canvasFade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 .intro-grid {
 	position: absolute;
 	top: 0;
+	animation-duration: 500ms;
+	animation-name: canvasFade;
+	animation-fill-mode: forwards;
+	//animation-delay: 300ms;
+}
+
+@keyframes textFade {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	1% {
+		visibility: visible;
+		opacity: 0;
+	}
+
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 .hero-intro__wrapper {
 	@extend %site-frame-wrapper;
-}
+	position: relative;
+	z-index: 9;
 
-.hero-intro__line {
-	margin-bottom: 0.7rem;
-	display: block;
-
-	&:last-child {
-		margin-bottom: 0;
+	.hero-intro.active & {
+		animation-duration: 1000ms;
+		animation-name: textFade;
+		animation-fill-mode: forwards;
+		animation-delay: 1250ms;
 	}
 }
+
+
 
 .hero-intro__no-break {
 	white-space: nowrap;
 }
 
 .hero-intro__title {
-	margin: 0;
+	margin: 2rem 0 0;
 	position: relative;
-	font-family: $typography__font-base;
-	font-size: modular-rem-scale( 1.05 );
-	font-weight: 300;
-	line-height: 1.75em;
-	color: #333;
+	color: black;
+	font-family: $typography__font-heading;
+	font-size: modular-rem-scale( 2 );
+	font-weight: 400;
+	line-height: 1.5;
 	text-align: center;
 
 	[data-theme="dark"] & {
@@ -58,63 +102,116 @@
 	}
 
 	@include media-query( $start: tablet ) {
-		font-size: modular-rem-scale( 1.5 );
+		margin-top: 1rem;
+		font-size: modular-rem-scale( 2.5 );
+		line-height: 1.45;
 	}
 
 	@include media-query( $start: desktop ) {
-		font-size: modular-rem-scale( 2.25 );
-		//line-height: 1.35;
-		text-align: left;
+		line-height: 1.4;
 
 		[data-theme="dark"] &::after {
 			left: -7%;
 			width: 70%;
 		}
 	}
+}
 
-	.hero-intro__first-word {
-		color: #444;
-		font-size: 1.35em;
+.hero-intro__line {
+	margin-bottom: 0.5rem;
+	display: block;
+
+	&:first-child {
+		margin-bottom: 1rem;
+		color: var( --color__primary );
+		font-family: Edo, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+		font-size: 1.05em;
+		//font-size: modular-rem-scale( 2 );
 		font-weight: 400;
+		transform: rotate( -3deg );
+
+
+		@include media-query( $start: mobile-lg ) {
+			font-size: 1.1em;
+			//font-size: modular-rem-scale( 2.85 );
+		}
+
+		@include media-query( $start: tablet ) {
+			font-size: 1.15em;
+			//font-size: 1.5em;
+			//font-size: modular-rem-scale( 2.85 );
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.hero-intro__name {
+	margin-top: -0.15em;
+	margin-left: .05em;
+	display: block;
+	position: relative;
+	color: var( --color__secondary );
+	font-size: 2.25em;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -1.5px;
+	text-transform: uppercase;
+
+	&::after {
+		// content: "";
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		height: 11px;
+		width: 100%;
+		border-style: solid;
+		border-width: 5px;
+		border-color: var( --color__secondary ) transparent transparent transparent;
+		border-radius: 50%;
+	}
+
+	@include media-query( $start: mobile-lg ) {
+		//font-size: 1.45em;
+		//font-size: modular-rem-scale( 4.65 );
+	}
+}
+
+.hero-intro__industry {
+	position: relative;
+	color: var( --color__secondary-text );
+	//font-size: 1.2em;
+	font-weight: 500;
+
+	&:hover {
+
+		color: black;
 
 		[data-theme="dark"] & {
 			color: #fff;
-		}
-	}
-
-	.hero-intro__name {
-		font-size: 1.9em;
-		font-weight: 400;
-	}
-
-	.hero-intro__industry {
-		color: var( --color__secondary-text );
-		font-size: 1.35em;
-		font-weight: 400;
-
-		&:hover {
-			color: #000;
-
-			[data-theme="dark"] & {
-				color: #fff;
-			}
-		}
-	}
-
-	.hero-intro__link {
-		color: #333;
-		font-size: 1.15em;
-		font-weight: 400;
-
-		[data-theme="dark"] & {
-			color: #fff;
-		}
-
-		&:hover {
-			color: var( --color__secondary-text );
 		}
 	}
 }
+
+.xxxhero-intro__link {
+	color: #333;
+	font-size: 1.15em;
+	font-weight: 400;
+
+
+	[data-theme="dark"] & {
+		color: #fff;
+	}
+
+	&:hover {
+		color: var( --color__secondary-text );
+	}
+}
+
+
+
 
 .hero-intro__cta {
 	position: absolute;
@@ -149,11 +246,6 @@
 	align-items: center;
 	opacity: 0.95;
 	z-index: 1;
-
-	@include media-query( $start: 650px ) {
-		width: 90%;
-		left: 5%;
-	}
 
 	@include media-query( $start: 1200px ) {
 		width: 80%;
@@ -197,12 +289,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 90%;
+	width: 100%;
 	z-index: 3;
 	color: $color__white-f;
 
 	@include media-query( $start: tablet ) {
-		width: 80%;
+		width: 90%;
 	}
 
 	@include media-query( $start: desktop ) {

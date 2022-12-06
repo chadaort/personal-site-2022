@@ -6,7 +6,6 @@ module.exports = {
 		date: '09/18/2022',
 		title: 'Personal website of Chad Ort',
 		body: './index.md',
-		summary: '',
 	},
 	meta: {
 		hasHero: true,

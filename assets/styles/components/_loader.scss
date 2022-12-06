@@ -1,0 +1,87 @@
+.loader {
+	position: relative;
+
+	.loader__circle-left::before,
+	.loader__circle-left::after,
+	.loader__circle-right::before,
+	.loader__circle-right::after {
+		content: '';
+		position: absolute;
+		width: 4rem;
+		height: 4rem;
+		background: rgba( $color__secondary, .35 );
+		border-radius: 50%;
+		animation-duration: 250ms;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: ease-in-out;
+	}
+
+	.loader__circle-left::before {
+		animation-name: moveCircleTopLeft;
+		background: rgba( #06D6A0, .35 );
+	}
+
+	.loader__circle-left::after {
+		animation-name: moveCircleBottomLeft;
+		background: rgba( #e76f51, .35 );
+	}
+
+	.loader__circle-right::before {
+		animation-name: moveCircleTopRight;
+		background: rgba( #ffd166, .35 );
+	}
+
+	.loader__circle-right::after {
+		animation-name: moveCircleBottomRight;
+		background: rgba( #00bbf9, .35 );
+	}
+}
+
+@keyframes moveCircleTopLeft {
+	from {
+		top: 0;
+		left: 0;
+	}
+
+	to {
+		top: -.85rem;
+		left: -.85rem;
+	}
+}
+
+@keyframes moveCircleBottomLeft {
+	from {
+		bottom: 0;
+		left: 0;
+	}
+
+	to {
+		bottom: -.85rem;
+		left: -.85rem;
+	}
+}
+
+@keyframes moveCircleTopRight {
+	from {
+		top: 0;
+		right: 0;
+	}
+
+	to {
+		top: -.85rem;
+		right: -.85rem;
+	}
+}
+
+@keyframes moveCircleBottomRight {
+	from {
+		bottom: 0;
+		right: 0;
+	}
+
+	to {
+		bottom: -.85rem;
+		right: -.85rem;
+	}
+}

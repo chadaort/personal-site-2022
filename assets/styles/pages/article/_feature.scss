@@ -196,7 +196,7 @@
 	opacity: 0.15;
 	background: var( --color__bg-tertiary );
 
-	body[data-theme="dark"] & {
+	[data-theme="dark"] & {
 		opacity: 0.65;
 	}
 }

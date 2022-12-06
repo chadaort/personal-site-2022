@@ -11,7 +11,7 @@ const getSiteContent = require( '../content/site' );
 const shuffle = require( './helpers/shuffle' );
 
 // A list of properties that are required within the page meta.
-const REQUIRED_PROPS = [ 'type', 'title', 'body', 'summary' ];
+const REQUIRED_PROPS = [ 'type', 'title', 'body' ];
 
 /**
  * Returns an object containing page and meta data based on the route.
@@ -50,16 +50,18 @@ const getRouteData = ( contentFile, siteMap ) => {
  */
 const getPageImage = ( item ) => {
 
+	const defaultImage = '/assets/images/site-card.png';
+
 	if ( ! item.post.type || ! item.meta.imageNamespace ) {
-		return '/assets/images/default-page-image.png';
+		return defaultImage;
 	}
 
 	const thumbPath = `assets/images/${ item.post.type }/${ item.meta.imageNamespace }/${ item.meta.imageNamespace }--thumb-link.png`;
 	if ( fs.existsSync( path.join( process.cwd(), thumbPath ) ) ) {
-		return `https://www.chadort.com/${ thumbPath }`;
+		return `/${ thumbPath }`;
 	}
 
-	return '/assets/images/default-page-image.png';
+	return defaultImage;
 };
 
 /**
@@ -70,11 +72,11 @@ const getPageImage = ( item ) => {
  */
 const getPageDescription = ( item ) => {
 
-	if ( ! item.meta.summary ) {
+	if ( item.meta.summary ) {
 		return item.meta.summary;
 	}
 
-	return 'Default page description';
+	return 'I\'m a short-stack developer and have worked in the gaming, advertising, and media industry.';
 };
 
 /**
@@ -89,7 +91,7 @@ const getPostData = ( contentFile ) => {
 	const data = require( path.resolve( process.cwd(), contentFile ) );
 	data.post = processMarkdownInProps( data.post, contentPath );
 	data.post.publicPath = getRoutePath( contentFile ).public;
-	data.post.pageDescription = getPageDescription( data );
+	data.post.description = getPageDescription( data );
 	data.post.ogImage = getPageImage( data );
 
 	data.meta = data.meta ? processMarkdownInProps( data.meta, contentPath ) : [];

@@ -7,7 +7,7 @@ $utility-bar-height: 32px;
 .utility-bar {
 	--utility-bar__background-color: #{ $color__black-2 };
 
-	body[data-theme="dark"] & {
+	[data-theme="dark"] & {
 		--utility-bar__background-color: #{ $color__black-1 };
 	}
 

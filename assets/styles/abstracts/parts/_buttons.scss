@@ -9,7 +9,7 @@
 	--color__btn-secondary-border-grayscale: #{ $color__black-7 };
 }
 
-body[data-theme="dark"],
+[data-theme="dark"],
 .has-dark-bg {
 	--color__btn-primary-color-grayscale: #{ $color__white-d };
 	--color__btn-primary-border-grayscale: #{ $color__btn-primary-border-grayscale };

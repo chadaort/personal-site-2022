@@ -4,7 +4,6 @@ module.exports = {
 		date: '09/18/2022',
 		title: 'Privacy Policy',
 		body: './index.md',
-		summary: '',
 	},
 	meta: {},
 };

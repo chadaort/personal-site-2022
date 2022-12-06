@@ -151,6 +151,7 @@ class LazyLoad {
 
 	loadImage() {
 
+		// We've already loaded the images so we'll bounce.
 		if ( ! this.image.hasAttribute( 'data-src' ) ) {
 			this.onImageLoad( this.image, this.placeholder );
 			return;

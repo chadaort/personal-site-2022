@@ -35,3 +35,10 @@ imageBackgroundTreatment();
 if ( document.getElementById( 'contact-form' ) ) {
 	render( <ContactForm />, document.getElementById( 'contact-form' ) );
 }
+
+if ( 'serviceWorker' in navigator ) {
+	window.addEventListener( 'load', () => {
+		navigator.serviceWorker.register( '/service-worker.js' )
+			.catch( ( error ) => console.log( `Service Worker Failed - ${ error }` ) );
+	} );
+}

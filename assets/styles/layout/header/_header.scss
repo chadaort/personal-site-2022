@@ -47,11 +47,11 @@
 			right: -100%;
 			bottom: 0;
 			z-index: 25;
-			background: rgba( #fff, 0.7 );
+			background: rgba( #fff, 0.8 );
 		}
 	}
 
-	.is-home[data-theme="dark"] &::before {
+	[data-theme="dark"] .is-home &::before {
 		background-color: rgba( #000, 0.55 );
 	}
 
@@ -81,6 +81,20 @@
 	height: inherit;
 	max-height: 100%;
 	z-index: 11;
+
+	.logo-symbol {
+		transition: fill 200ms;
+	}
+
+	a:hover {
+		.logo-symbol--c {
+			fill: var( --color__primary );
+		}
+
+		.logo-symbol--o {
+			fill: var( --color__secondary );
+		}
+	}
 
 	@include media-query( $start: desktop ) {
 		padding: 20px 0;

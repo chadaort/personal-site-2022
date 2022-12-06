@@ -9,9 +9,9 @@ export default () => {
 	themeToggleButtons.forEach( ( btn ) => {
 		btn.addEventListener( 'click', ( e ) => {
 			e.preventDefault();
-			const currentTheme = document.body.getAttribute( 'data-theme' ) ?? 'light';
+			const currentTheme = document.documentElement.getAttribute( 'data-theme' ) ?? 'light';
 			const activatedTheme = currentTheme === 'light' ? 'dark' : 'light';
-			document.body.setAttribute( 'data-theme', activatedTheme );
+			document.documentElement.setAttribute( 'data-theme', activatedTheme );
 			document.body.dispatchEvent( themeChangeEvent );
 			window.localStorage.setItem( 'theme', activatedTheme );
 		} );
