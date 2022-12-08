@@ -21,6 +21,7 @@ module.exports = {
 		featureImage: {
 			alt: 'Slack Application banner',
 		},
+		anchorText: 'Read more about the <span>Snopes Slack application<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),

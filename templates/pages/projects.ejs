@@ -29,8 +29,10 @@
 						<h2 class="project-grid__item-title">
 							<a class="project-grid__item-title-link" href="<%= `${ templateData.site.core.siteUrl }/${ project.post.publicPath }` %>" tabindex="-1"><%= project.post.title %></a>
 						</h2>
-						<p class="project-grid__item-summary"><%= project.post.summary %></p>
-						<a class="project-grid__item-cta" href="<%= `${ templateData.site.core.siteUrl }/${ project.post.publicPath }` %>">Read More</a>
+						<p class="project-grid__item-summary">
+							<%= project.post.summary %>
+							<a href="#" class="project-grid__item-cta"><%- project.meta.anchorText %></a>.
+						</p>
 					</div>
 				</article>
 			</div>

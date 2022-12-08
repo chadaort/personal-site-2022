@@ -18,7 +18,7 @@ module.exports = {
 		featureImage: {
 			alt: 'How I built this site banner image',
 		},
-		anchorText: '<span>Click here</span> to read more about how this site was built.',
+		anchorText: 'Click here to <span>read more about the how this site was built</span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),

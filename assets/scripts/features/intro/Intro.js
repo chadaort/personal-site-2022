@@ -796,7 +796,6 @@ export default class Intro {
 	draw() {
 		this.timeElapsed = performance.now() - this.lastTime;
 		this.ctx.clearRect( 0, 0, this.canvas.width, this.canvas.height );
-		const test = this.ctx.globalCompositeOperation;
 
 		this.updateGrid();
 		this.drawGridColors();
@@ -804,6 +803,11 @@ export default class Intro {
 		const originalCompOp = this.ctx.globalCompositeOperation;
 
 		let masksLoaded = false;
+
+		const gridCtx = this.gridCanvas.getContext( '2d' );
+
+		gridCtx.fillStyle = 'rgba( 0, 0, 0, .15 )';
+		gridCtx.fillRect( 0, 0, this.gridCanvas.width, this.gridCanvas.height );
 
 		if ( this.sceneImgs.topLeftMask && this.sceneImgs.topLeftMask.img && this.sceneImgs.bottomRightMask && this.sceneImgs.bottomRightMask.img ) {
 			const defaultCompOp = this.ctx.globalCompositeOperation;
@@ -842,8 +846,6 @@ export default class Intro {
 		this.ctx.drawImage( this.gridCanvas, 0, 0 );
 
 		this.ctx.globalCompositeOperation = originalCompOp;
-
-		this.ctx.globalCompositeOperation = test;
 		this.lastTime = performance.now();
 		this.animationFrame = window.requestAnimationFrame( () => this.draw() );
 	}

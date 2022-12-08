@@ -24,6 +24,7 @@ module.exports = {
 		],
 		projectStillActive: true,
 		projectURL: 'https://www.lineage2.com/',
+		anchorText: 'Read more about the <span>Lineage 2 - Tauti site<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

@@ -26,6 +26,7 @@ module.exports = {
 			},
 		],
 		projectStillActive: false,
+		anchorText: 'Read more about <span>converting City of Heroes to free to play<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

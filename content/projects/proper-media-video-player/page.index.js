@@ -20,6 +20,7 @@ module.exports = {
 		projectStillActive: true,
 		highlight: '30+ million monthly views',
 		projectURL: 'https://propermedia.io',
+		anchorText: 'Read more about the <span>Proper Media video player<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

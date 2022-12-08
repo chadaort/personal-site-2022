@@ -26,6 +26,7 @@ module.exports = {
 			},
 		],
 		projectStillActive: false,
+		anchorText: 'Read more about the <span>City of Heroes - Going Rogue project<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

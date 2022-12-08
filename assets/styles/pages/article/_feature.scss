@@ -99,6 +99,8 @@
 }
 
 .page-feature__img-wrapper {
+	margin-top: 0;
+	margin-bottom: 0;
 	@extend %img__treatment-primary;
 	margin-left: -( gutter( "frame" ) );
 	margin-right: -( gutter( "frame" ) );

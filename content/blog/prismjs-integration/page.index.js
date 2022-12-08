@@ -19,7 +19,7 @@ module.exports = {
 		featureImage: {
 			alt: 'Prism.js integration banner image',
 		},
-		anchorText: '<span>Click here</span> to read more about how I integrated Prism.JS.',
+		anchorText: 'Click here to read more about the <span>Primis.js integration</span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),

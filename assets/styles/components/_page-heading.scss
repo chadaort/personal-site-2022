@@ -2,24 +2,26 @@
   * Default page heading.
   */
 .page-heading {
-	margin: 1.5rem 0 1.25rem;
+	margin: 1.5rem 0 0;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid var( --color__line-secondary );
 
 	.is-projects &,
 	.is-project & {
-		margin-bottom: 0.5rem;
+		margin-bottom: 0;
 		border: 0;
 	}
 }
 
 .page-heading__title {
-	@extend %typography-heading-2;
+	@extend %typography-heading-1;
 	margin: 0;
 }
 
 .page-heading__subtitle {
 	@extend %typography-heading-5--cap;
+	font-size: var(--font__size-lg );
+	font-family: $typography__font-base;
 	margin: 0;
 	font-weight: 600;
 }

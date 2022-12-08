@@ -30,9 +30,9 @@
 	}
 
 	.#{ $el_prefix }title {
-		margin: 0.65em 0 0.3em;
-		font-size: var( --font__scale-1 );
-		font-weight: 500;
+		margin: 0.5em 0 0.25em;
+		font-size: var( --font__scale-2 );
+		font-weight: 400;
 	}
 
 	.#{ $el_prefix }title-a {
@@ -51,7 +51,14 @@
 	}
 
 	.#{ $el_prefix }cta {
-		@extend %btn--outline-primary-small;
-		margin-top: 1rem;
+		color: var( --color__text-summary );
+
+		span {
+			font-weight: 400;
+		}
+
+		&:hover {
+			color: var( --color__secondary-text );
+		}
 	}
 }

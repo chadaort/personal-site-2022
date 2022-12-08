@@ -21,6 +21,7 @@ module.exports = {
 		],
 		projectStillActive: false,
 		highlight: 'VGX Award for Best Multiplayer Game',
+		anchorText: 'Read more about the <span>City of Heroes migration<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

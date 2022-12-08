@@ -6,6 +6,9 @@
 [data-theme="dark"],
 .has-dark-bg {
 
+	--color__secondary-text:      #{ $color__secondary };
+	--color__secondary-text-dark: #{ $color__secondary };
+
 	// Logo
 	--color__logo-symbol: #fff;
 	--color__logo-text: #fff;

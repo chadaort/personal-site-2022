@@ -13,7 +13,7 @@ module.exports = {
 		companyType: 'Advertising',
 		subtitle: 'Advertising',
 		homePageList: true,
-		employmentTimeframe: '2016 - 2017',
+		employmentTimeframe: '2016 <span>-</span> 2017',
 		displayDate: 'July 2016 to May 2017',
 		companyDesc: 'Custom header bidding solutions that allow publishers to maximize ad revenue and reduce overhead.',
 		position: 'Contract Developer',

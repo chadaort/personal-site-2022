@@ -34,6 +34,7 @@ module.exports = {
 		projectStillActive: true,
 		highlight: 'Presidential Award at the Korea Game Awards',
 		projectURL: 'https://www.bladeandsoul.com/en-us',
+		anchorText: 'Read more about the <span>Blade and Soul project<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

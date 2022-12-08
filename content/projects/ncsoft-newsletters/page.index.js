@@ -23,6 +23,7 @@ module.exports = {
 			},
 		],
 		projectStillActive: false,
+		anchorText: 'Read more about <span>NCSOFT newsletter work<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

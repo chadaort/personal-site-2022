@@ -20,7 +20,7 @@ module.exports = {
 		featureImage: {
 			alt: 'Block editor migration banner image',
 		},
-		anchorText: '<span>Click here</span> to find out more about the block editor migration.',
+		anchorText: 'Click here to read more about the <span>Block Editor migration work</span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'blog', siteMap, 2, 'random' ),

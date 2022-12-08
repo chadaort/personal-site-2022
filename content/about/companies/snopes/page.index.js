@@ -14,7 +14,7 @@ module.exports = {
 		subtitle: 'Fact Checking',
 		companyType: 'Fact Checking',
 		homePageList: true,
-		employmentTimeframe: '2017 - Present',
+		employmentTimeframe: '2017 <span>-</span> Present',
 		displayDate: 'July 2017 to Present',
 		companyDesc: 'Snopes is a fact checking company that sorts out myths and rumors on the internet. The company fights disinformation by identifying, exploring and correcting false information. My job at Snopes is managing our development efforts and I\'m hands-on, doing both front-end and back-end development.',
 		position: 'Lead Developer',

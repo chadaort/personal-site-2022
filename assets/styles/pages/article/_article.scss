@@ -11,11 +11,12 @@
 // Article page utility navigation.
 //
 .article__utility {
-	margin: 1rem 0 1.5rem;
+	margin: .65rem 0 1.5rem;
 	padding: 0 0 1.35rem;
 	position: relative;
 	color: var( --color__text-muted );
 	font-size: var( --font__scale-0 );
+	font-weight: 400;
 
 	&::after {
 		content: "";

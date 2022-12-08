@@ -28,6 +28,7 @@ module.exports = {
 		projectStillActive: true,
 		projectURL: 'https://tvtropes.org/',
 		highlight: '20+ million monthly visitors',
+		anchorText: 'Read more about the <span>TV Tropes redesign<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

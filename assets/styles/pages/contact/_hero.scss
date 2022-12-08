@@ -157,11 +157,19 @@
 .contact-hero__heading {
 	position: relative;
 	opacity: 0;
+	@extend %typography-heading-3;
+	font-family: $typography__font-base;
 	animation-name: heading;
 	animation-duration: 800ms;
 	animation-delay: 1100ms;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
+
+	@include media-query( $start: desktop ) {
+		@include typography-heading-1;
+		margin-bottom: 0;
+		font-family: $typography__font-base;
+	}
 
 	@media ( prefers-reduced-motion: reduce ) {
 		animation-duration: 0ms;
@@ -170,7 +178,7 @@
 
 .contact-hero__heading-subtitle {
 	position: absolute;
-	top: -18px;
+	top: -.25em;
 	left: 0;
 	opacity: 0;
 	animation-name: fade-sub-heading-in;
@@ -178,7 +186,7 @@
 	animation-delay: 1500ms;
 	animation-fill-mode: forwards;
 	color: $color__secondary;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	font-weight: 700;
 
 	@media ( prefers-reduced-motion: reduce ) {
@@ -193,7 +201,7 @@
 }
 
 .contact-hero__heading-title {
-	opacity: 0.6;
+	opacity: 0.65;
 	color: #fff;
 	font-size: 3em;
 	font-weight: 900;

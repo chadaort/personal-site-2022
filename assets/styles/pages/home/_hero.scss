@@ -81,8 +81,6 @@
 	}
 }
 
-
-
 .hero-intro__no-break {
 	white-space: nowrap;
 }
@@ -91,10 +89,10 @@
 	margin: 2rem 0 0;
 	position: relative;
 	color: black;
-	font-family: $typography__font-heading;
+	font-family: $typography__font-base;
 	font-size: modular-rem-scale( 2 );
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.35;
 	text-align: center;
 
 	[data-theme="dark"] & {
@@ -103,12 +101,12 @@
 
 	@include media-query( $start: tablet ) {
 		margin-top: 1rem;
-		font-size: modular-rem-scale( 2.5 );
-		line-height: 1.45;
+		font-size: modular-rem-scale( 2.2 );
+		//line-height: 1.45;
 	}
 
 	@include media-query( $start: desktop ) {
-		line-height: 1.4;
+		//line-height: 1.4;
 
 		[data-theme="dark"] &::after {
 			left: -7%;
@@ -123,21 +121,24 @@
 
 	&:first-child {
 		margin-bottom: 1rem;
-		color: var( --color__primary );
-		font-family: Edo, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-		font-size: 1.05em;
+		//color: var( --color__primary );
+		//font-family: Edo, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+		color: var( --color__text-muted );
+		font-family: $typography__font-heading;
+		font-size: 1.1em;
 		//font-size: modular-rem-scale( 2 );
 		font-weight: 400;
-		transform: rotate( -3deg );
+		text-transform: uppercase;
+		//transform: rotate( -3deg );
 
 
 		@include media-query( $start: mobile-lg ) {
-			font-size: 1.1em;
+			//font-size: 1.1em;
 			//font-size: modular-rem-scale( 2.85 );
 		}
 
 		@include media-query( $start: tablet ) {
-			font-size: 1.15em;
+			//font-size: 1.15em;
 			//font-size: 1.5em;
 			//font-size: modular-rem-scale( 2.85 );
 		}
@@ -153,8 +154,9 @@
 	margin-left: .05em;
 	display: block;
 	position: relative;
-	color: var( --color__secondary );
-	font-size: 2.25em;
+	color: var( --color__text-title-secondary );
+	//color: var( --color__secondary );
+	font-size: 2.55em;
 	font-weight: 600;
 	line-height: 1;
 	letter-spacing: -1.5px;
@@ -183,7 +185,7 @@
 	position: relative;
 	color: var( --color__secondary-text );
 	//font-size: 1.2em;
-	font-weight: 500;
+	//font-weight: 500;
 
 	&:hover {
 

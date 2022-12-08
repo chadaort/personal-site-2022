@@ -29,8 +29,12 @@
 						<h3 class="aside-content__list-title">
 							<a class="aside-content__list-title-a" href="#"><%= item.post.title %></a>
 						</h3>
-						<p class="aside-content__list-summary"><%= item.post.summary %></p>
-						<a class="aside-content__list-cta" href="<%= `${ templateData.site.core.siteUrl }/${ item.post.publicPath }` %>">Read More</a>
+						<p class="aside-content__list-summary">
+							<%= item.post.summary %>
+							<% if ( item.meta.anchorText ) { %>
+								<a class="aside-content__list-cta" href="<%= `${ templateData.site.core.siteUrl }/${ item.post.publicPath }` %>"><%- item.meta.anchorText %></a>.
+							<% } %>
+						</p>
 					</div>
 				</article>
 			</li>

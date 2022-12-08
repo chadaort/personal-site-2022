@@ -21,6 +21,7 @@ module.exports = {
 		disableImageTreatments: true,
 		projectStillActive: true,
 		projectURL: 'https://www.snopes.com',
+		anchorText: 'Read more about the <span>WordPress widget plugin<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

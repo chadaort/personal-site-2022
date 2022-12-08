@@ -28,6 +28,7 @@ module.exports = {
 		projectStillActive: true,
 		projectURL: 'https://www.guildwars2.com/',
 		highlight: '60+ million monthly visitors',
+		anchorText: 'Read more about the <span>Guild Wars 2 launch<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

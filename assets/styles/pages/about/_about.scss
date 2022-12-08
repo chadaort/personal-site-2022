@@ -16,10 +16,14 @@
 	text-align: center
 }
 
+.is-about .page-heading__subtitle {
+	font-size: var(--font__size-lg );
+}
+
 .is-about .page-heading__title {
 	margin-top: -3px;
-	font-weight: 500;
-	text-transform: uppercase;
+	//font-weight: 500;
+	//text-transform: uppercase;
 }
 
 .about-page__content,

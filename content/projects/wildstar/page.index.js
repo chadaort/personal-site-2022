@@ -27,6 +27,7 @@ module.exports = {
 		],
 		projectStillActive: false,
 		highlight: 'Most Innovative Game - PAX East',
+		anchorText: 'Read more about the <span>Wildstar site launch<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

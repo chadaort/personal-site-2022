@@ -26,6 +26,7 @@ module.exports = {
 		],
 		projectStillActive: true,
 		projectURL: 'https://us.ncsoft.com/en-us',
+		anchorText: 'Read more about the <span>NCSOFT site redesign<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

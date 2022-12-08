@@ -28,6 +28,7 @@ module.exports = {
 		projectStillActive: true,
 		highlight: '#1 Video Game of 2012 - Time Magazine',
 		projectURL: 'https://www.guildwars2.com/',
+		anchorText: 'Read more about the <span>Guild Wars 2 teaser site<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

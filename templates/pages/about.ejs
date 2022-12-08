@@ -22,7 +22,7 @@
 						<span class="career-timeline__bar-components"></span>
 						<h4 class="career-timeline__position has-dark-bg">
 							<%= company.meta.position %>
-							<span class="career-timeline__dates has-dark-bg"><%= company.meta.employmentTimeframe %></span>
+							<span class="career-timeline__dates has-dark-bg"><%- company.meta.employmentTimeframe %></span>
 						</h4>
 						<h3 class="career-timeline__company-name has-dark-bg">
 							<a href="<%= `${ templateData.site.core.siteUrl }/${ company.post.publicPath }` %>" class="career-timeline__company-name-link">

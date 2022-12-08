@@ -4,7 +4,7 @@
 	height: inherit;
 	min-height: 0;
 	max-height: 100%;
-	font-family: $typography__font-heading;
+	//font-family: $typography__font-heading;
 	font-weight: 500;
 	text-align: right;
 	background: none;
@@ -23,6 +23,7 @@
 	max-height: 100%;
 	opacity: 1;
 	list-style-type: none;
+	font-size: 0;
 
 	.header__menu--active & {
 		margin: 0 1.5rem;
@@ -59,20 +60,22 @@
 	position: relative;
 	vertical-align: middle;
 	color: var( --color__text-title-primary );
-	font-size: var( --font__scale-0 );
-	font-weight: 500;
+	font-size: modular-rem-scale( 1.1 );
+	font-weight: 600;
+	line-height: 1rem;
 	text-decoration: none;
 
 	&::after {
 		content: "/";
 		position: absolute;
-		top: calc( ( 50% - 17px ) + 1px );
+		//margin-top: calc( ( 2em / 2 ) * -1 );
+		//top: calc( ( 50% - 17px ) + 1px );
 		right: -19px;
 		color: var( --color__primary-text );
-		font-family: $typography__font-heading;
+		font-family: $typography__font-base;
 		font-weight: 300;
-		font-size: 2rem;
-		line-height: 1em;
+		font-size: 2em;
+		line-height: 1rem;
 
 		.header__menu--active & {
 			display: none;
@@ -112,14 +115,15 @@
 }
 
 .main-nav__link-count {
-	margin-left: 5px;
-	padding: 2px 5px;
+	margin-left: .05em;
+	padding: .2em .3em;
 	position: relative;
 	top: -1px;
+	vertical-align: middle;
 	color: #fff;
-	font-family: $typography__font-base;
-	font-size: var( --font__xxsmall );
+	font-family: $typography__font-heading;
+	font-size: var( --font__xsmall );
 	font-weight: 600;
 	background: var( --color__secondary );
-	border-radius: 6px;
+	border-radius: 0.3em;
 }

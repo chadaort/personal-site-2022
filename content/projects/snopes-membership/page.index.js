@@ -23,6 +23,7 @@ module.exports = {
 		projectStillActive: true,
 		disableImageTreatments: true,
 		projectURL: 'https://www.snopes.com/',
+		anchorText: 'Read more about the <span>Snopes Membership work<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

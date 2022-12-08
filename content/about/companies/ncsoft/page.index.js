@@ -13,7 +13,7 @@ module.exports = {
 		companyType: 'Video Games',
 		subtitle: 'Video Games',
 		homePageList: true,
-		employmentTimeframe: '2008 - 2015',
+		employmentTimeframe: '2008 <span>-</span> 2015',
 		displayDate: 'November 2008 to March 2015',
 		position: 'Lead Developer/Development Manager',
 		companyDesc: 'NCSoft is a South Korean video game developer. The company has produced Lineage, City of Heroes, WildStar, Guild Wars, Aion, Blade & Soul, Exteel and Master X Master.',

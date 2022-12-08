@@ -31,6 +31,7 @@ module.exports = {
 		projectStillActive: true,
 		projectURL: 'https://www.aiononline.com/',
 		highlight: '20+ million <span>monthly visitors</span>',
+		anchorText: 'Read more about the <span>Aion project<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

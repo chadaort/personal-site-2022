@@ -31,6 +31,7 @@ module.exports = {
 		projectStillActive: true,
 		highlight: '2018 Gamer\'s Choice Award',
 		projectURL: 'https://www.lineage2.com/',
+		anchorText: 'Read more about the <span>Lineage 2 redesign<span>',
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
