@@ -95,6 +95,7 @@
     font-family: 'Cronos Pro';
     font-style: normal;
     font-weight: normal;
+	font-display: swap;
     src: local(''),
 		url('/assets/fonts/cronos/cronos-pro.woff') format('woff'),
 		url('/assets/fonts/cronos/cronos-pro.woff2') format('woff2');
@@ -104,6 +105,7 @@
     font-family: 'Cronos Pro';
     font-style: normal;
     font-weight: 500;
+	font-display: swap;
     src: local(''),
 		url('/assets/fonts/cronos/cronos-pro-medium.woff') format('woff')
 		url('/assets/fonts/cronos/cronos-pro-medium.woff2') format('woff2');
@@ -113,6 +115,7 @@
     font-family: 'Cronos Pro';
     font-style: normal;
     font-weight: 600;
+	font-display: swap;
     src: local(''),
 		url('/assets/fonts/cronos/cronos-pro-bold.woff') format('woff')
 		url('/assets/fonts/cronos/cronos-pro-bold.woff2') format('woff2');
