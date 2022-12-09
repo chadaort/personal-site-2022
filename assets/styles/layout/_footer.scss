@@ -23,14 +23,17 @@
 	}
 
 	@include media-query( $start: desktop ) {
-		padding-top: 5px;
+		padding-top: 1rem;
 		padding-bottom: 5px;
 		flex-direction: row;
 	}
 }
 
 .footer__menu {
+	margin-bottom: 1rem;
+
 	@include media-query( $start: desktop ) {
+		margin-bottom: 0;
 		flex: 1 0 50%;
 		order: 2;
 		text-align: right;
@@ -45,6 +48,7 @@
 	text-align: center;
 
 	.footer__disclosure-copy {
+		margin-top: 0;
 		margin-bottom: 0.5rem;
 	}
 

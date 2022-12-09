@@ -115,12 +115,16 @@
 	}
 
 	@include media-query( $start: tablet ) {
-		padding: 15px;
+		padding: 0;
 		display: block;
 		position: relative;
 		z-index: 1;
 		text-decoration: none;
 		transition: color 250ms;
+
+		[data-theme="dark"] & {
+			padding: 15px;
+		}
 
 		@media ( prefers-reduced-motion: reduce ) {
 			transition-duration: 0ms;

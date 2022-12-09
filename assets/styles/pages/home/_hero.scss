@@ -159,7 +159,7 @@
 	font-size: 2.55em;
 	font-weight: 600;
 	line-height: 1;
-	letter-spacing: -1.5px;
+	// letter-spacing: -1.5px;
 	text-transform: uppercase;
 
 	&::after {
@@ -184,36 +184,19 @@
 .hero-intro__industry {
 	position: relative;
 	color: var( --color__secondary-text );
-	//font-size: 1.2em;
-	//font-weight: 500;
+	font-weight: 600;
 
 	&:hover {
-
 		color: black;
+		text-decoration: underline;
+    	text-underline-offset: 4px;
+    	text-decoration-color: var( --color__secondary);
 
 		[data-theme="dark"] & {
 			color: #fff;
 		}
 	}
 }
-
-.xxxhero-intro__link {
-	color: #333;
-	font-size: 1.15em;
-	font-weight: 400;
-
-
-	[data-theme="dark"] & {
-		color: #fff;
-	}
-
-	&:hover {
-		color: var( --color__secondary-text );
-	}
-}
-
-
-
 
 .hero-intro__cta {
 	position: absolute;
