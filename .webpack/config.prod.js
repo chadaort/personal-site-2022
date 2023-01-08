@@ -131,7 +131,7 @@ module.exports = async () => {
 						inject: true,
 						filename: `${ route.uri }`,
 						publicPath: templateData.site.host,
-						// publicPath: 'http://www.localhost:3000',
+						//publicPath: 'http://www.localhost:3000',
 						excludeChunks: templateData.post.type === 'home' ? [] : [ 'home-page-intro' ],
 						template: path.join( process.cwd(), `templates/base.ejs?filename=${ route.uri }` ),
 						templateData,

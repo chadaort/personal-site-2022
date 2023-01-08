@@ -94,6 +94,16 @@
 @font-face {
     font-family: 'Cronos Pro';
     font-style: normal;
+    font-weight: 300;
+	font-display: swap;
+    src: local(''),
+		url('/assets/fonts/cronos/cronos-pro-light.woff') format('woff'),
+		url('/assets/fonts/cronos/cronos-pro-light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Cronos Pro';
+    font-style: normal;
     font-weight: normal;
 	font-display: swap;
     src: local(''),

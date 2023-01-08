@@ -1,6 +1,7 @@
+const config = require( '../../../config' );
 const pageHandler = require( '../../../inc/page' );
 
-const assetNamespace = 'lineage2-redesign';
+const namespace = 'lineage2-redesign';
 
 module.exports = {
 	post: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Game site',
-		imageNamespace: assetNamespace,
+		imageNamespace: namespace,
 		featureImageSet: [
 			{
 				alt: 'Lineage 2 redesign screen 1',
@@ -32,6 +33,45 @@ module.exports = {
 		highlight: '2018 Gamer\'s Choice Award',
 		projectURL: 'https://www.lineage2.com/',
 		anchorText: 'Read more about the <span>Lineage 2 redesign<span>',
+		projectLink: `
+			<article class="page-link page-link--mockup-image project-${ namespace }">
+				<a class="page-link__a" href="${ config.siteUrl }/projects/${ namespace }/">
+
+					<span class="page-link__bg-image-wrapper">
+						<img
+							class="page-link__bg-image"
+							src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200 1200w"
+							alt="Lineage 2 redesign"
+							data-lazy-load-target=".page-link"
+							data-lazy-load />
+					</span>
+
+					<div class="page-link__image-wrapper">
+						<img
+							class="page-link__image"
+							src="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200 1200w"
+							alt="Lineage 2 redesign mockup" />
+					</div>
+
+
+					<div class="page-link__copy">
+						<h3 class="page-link__title-type">Site Redesign</h3>
+						<h2 class="page-link__title">Lineage 2</h2>
+					</div>
+				</a>
+
+			</article>
+		`,
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

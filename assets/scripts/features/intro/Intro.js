@@ -1,5 +1,6 @@
 import animate from '../../helpers/canvas-animate';
 import VideoPlayer from './VideoPlayer';
+import hexToRgb from '../../helpers/hex-to-rgb';
 
 const GRID_ASSETS = [
 	{
@@ -721,6 +722,26 @@ export default class Intro {
 					default:
 						break;
 				}
+
+				const COLORS = [
+					'#06D6A0',
+					'#8ecae6',
+					'#ffd166',
+					'#80ed99',
+					'#00bbf9',
+					'#e76f51',
+					'#f77f00',
+					'#ef476f',
+				];
+
+				//Math.random( COLORS.length );
+
+				const color = Math.round( Math.random() * ( COLORS.length - 1 ) );
+				console.log( color );
+				console.log( COLORS[ color ] );
+				const colorRGB = hexToRgb( COLORS[ color ] );
+				gridCtx.fillStyle = `rgba( ${ colorRGB[0] }, ${ colorRGB[1] }, ${ colorRGB[2] }, 0.5 )`;
+				gridCtx.fillRect( x, y, this.grid.itemWidth, this.grid.itemHeight );
 
 				gridCtx.globalAlpha = 1;
 				x += this.grid.itemWidth + this.grid.gutter;

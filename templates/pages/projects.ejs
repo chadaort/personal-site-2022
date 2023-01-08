@@ -1,41 +1,15 @@
 <%- include( '../helpers/sorting' ) -%>
-
 <div id="main-content" class="content__main">
+	<p class="page-intro">
+		I've been a programmer for over a decade working on high traffic properties in the <a href="<%= templateData.site.core.siteUrl %>/about/companies/snopes/">media</a>, <a href="<%= templateData.site.core.siteUrl %>/about/companies/proper-media/">advertising</a>, and <a href="<%= templateData.site.core.siteUrl %>/about/companies/ncsoft/">gaming</a> industries. This is a list of my most memorable projects.</p>
 	<div class="project-grid" role="grid">
 		<% templateData.projects.forEach( project => { %>
-			<% const imgTreatmentClass = project.meta.disableImageTreatments ? 'disable-img-treatment' : '' %>
-			<div class="project-grid__item" role="gridcell">
-				<article class="project-grid__item-wrapper">
-					<a
-						class="<%= buildContainerClass( [ 'project-grid__item-img-wrapper', imgTreatmentClass ] ); %>"
-						href="<%= `${ templateData.site.core.siteUrl }/${ project.post.publicPath }` %>"
-						tabindex="-1"
-					>
-						<img
-							class="project-grid__item-thumb lazy"
-							src="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500` %>"
-							data-src="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=1200` %>"
-							data-srcset="<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=480 480w` %>,
-								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=700 700w` %>,
-								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=900 900w` %>,
-								<%= `/assets/images/${ project.post.type }/${ project.meta.imageNamespace }/${ project.meta.imageNamespace }--thumb-link.png?size=1200 1200w` %>"
-							alt="<%= project.post.title %>"
-							data-lazy-load />
-					</a>
-					<div class="project-grid__copy-wrapper">
-						<% if ( project.meta.highlight ) { %>
-							<h3 class="project-grid__item-sub-title"><%- project.meta.highlight %></h3>
-						<% } %>
-						<h2 class="project-grid__item-title">
-							<a class="project-grid__item-title-link" href="<%= `${ templateData.site.core.siteUrl }/${ project.post.publicPath }` %>" tabindex="-1"><%= project.post.title %></a>
-						</h2>
-						<p class="project-grid__item-summary">
-							<%= project.post.summary %>
-							<a href="#" class="project-grid__item-cta"><%- project.meta.anchorText %></a>.
-						</p>
-					</div>
-				</article>
-			</div>
+			<% if ( project.meta.projectLink ) { %>
+				<% const imgTreatmentClass = project.meta.disableImageTreatments ? 'disable-img-treatment' : '' %>
+				<div class="project-grid__item" role="gridcell">
+					<%- project.meta.projectLink %>
+				</div>
+			<% } %>
 		<% } ) %>
 	</div>
 </div>

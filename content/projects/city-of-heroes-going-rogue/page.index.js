@@ -1,6 +1,7 @@
+const config = require( '../../../config' );
 const pageHandler = require( '../../../inc/page' );
 
-const assetNamespace = 'city-of-heroes-going-rogue';
+const namespace = 'city-of-heroes-going-rogue';
 
 module.exports = {
 	post: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Expansion pack microsite',
-		imageNamespace: assetNamespace,
+		imageNamespace: namespace,
 		featureImageSet: [
 			{
 				alt: 'City of Heroes Going Rogue screen 1',
@@ -27,6 +28,44 @@ module.exports = {
 		],
 		projectStillActive: false,
 		anchorText: 'Read more about the <span>City of Heroes - Going Rogue project<span>',
+		projectLink: `
+			<article class="page-link page-link--mockup-image project-${ namespace } project-align-right">
+				<a class="page-link__a" href="${ config.siteUrl }/projects/${ namespace }/">
+
+					<span class="page-link__bg-image-wrapper">
+						<img
+							class="page-link__bg-image"
+							src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200 1200w"
+							alt="City of Heroes Going Rogue"
+							data-lazy-load-target=".page-link"
+							data-lazy-load />
+					</span>
+
+					<div class="page-link__image-wrapper">
+						<img
+							class="page-link__image"
+							src="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--mockup.png?size=1200 1200w"
+							alt="City of Heroes Going Rogue site mockup" />
+					</div>
+
+					<div class="page-link__copy">
+						<h2 class="page-link__title">City of Heroes</h2>
+						<h3 class="page-link__title-type">Going Rogue</h3>
+					</div>
+				</a>
+
+			</article>
+		`,
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

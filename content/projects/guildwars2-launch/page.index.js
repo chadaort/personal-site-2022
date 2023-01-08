@@ -1,6 +1,7 @@
+const config = require( '../../../config' );
 const pageHandler = require( '../../../inc/page' );
 
-const assetNamespace = 'guildwars2-launch';
+const namespace = 'guildwars2-launch';
 
 module.exports = {
 	post: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Game launch site',
-		imageNamespace: assetNamespace,
+		imageNamespace: namespace,
 		featureImageSet: [
 			{
 				alt: 'Guild Wars 2 screen 1',
@@ -29,6 +30,33 @@ module.exports = {
 		projectURL: 'https://www.guildwars2.com/',
 		highlight: '60+ million monthly visitors',
 		anchorText: 'Read more about the <span>Guild Wars 2 launch<span>',
+		projectLink: `
+			<article class="page-link page-link--mockup-image project-${ namespace } project-align-right">
+				<a class="page-link__a" href="${ config.siteUrl }/projects/${ namespace }/">
+
+					<span class="page-link__bg-image-wrapper">
+						<img
+							class="page-link__bg-image"
+							src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--bg-image.png?size=1200 1200w"
+							alt="Guild Wars 2 launch site"
+							data-lazy-load-target=".page-link"
+							data-lazy-load />
+					</span>
+
+					<div class="page-link__copy">
+						<h3 class="page-link__title-type">Launch Site</h3>
+						<h2 class="page-link__title">Guild Wars 2</h2>
+						<h4 class="page-link__sub-title">60+ million monthly visitors</h4>
+					</div>
+				</a>
+
+			</article>
+		`,
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),

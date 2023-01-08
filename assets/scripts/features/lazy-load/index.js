@@ -14,6 +14,7 @@ class LazyLoad {
 	constructor( image ) {
 
 		this.image = image;
+
 		this.canvas = document.createElement( 'canvas' );
 		this.canvas.classList.add( 'lazy-canvas-image' );
 		this.ctx = this.canvas.getContext( '2d' );
@@ -38,15 +39,11 @@ class LazyLoad {
 	 */
 	setup( reload = false ) {
 
-		if ( this.image.getBoundingClientRect().width === 0 ) {
-			return;
-		}
-
 		this.lazyType = ! this.image.getAttribute( 'data-lazy-load' ) || this.isAboveFold( this.image ) ? 'default' : this.image.getAttribute( 'data-lazy-load' );
 		const imageStyles = getComputedStyle( this.image );
 		this.canvas.width = this.image.getBoundingClientRect().width;
 		this.canvas.height = this.image.getBoundingClientRect().height;
-		this.canvas.style.zIndex = imageStyles.zIndex === 'auto' ? 1 : imageStyles.zIndex + 1;
+		this.canvas.style.zIndex = imageStyles.zIndex === 'auto' ? 1 : Number( imageStyles.zIndex ) + 1;
 
 		if ( ! reload ) {
 			this.changeHandler();
@@ -88,6 +85,7 @@ class LazyLoad {
 	}
 
 	loadPlaceholderImage() {
+
 		/**
 		 * Loads a placeholder image.
 		 */
@@ -116,10 +114,22 @@ class LazyLoad {
 		this.canvasImage = new Image();
 		this.canvasImage.addEventListener( 'load', loadPlaceholder );
 		this.canvasImage.src = this.image.src;
+
 		this.image.parentNode.insertBefore( this.canvas, this.image );
 	}
 
 	async onImageLoad( startTime = 0 ) {
+
+		/**
+		 * Sets a loaded classes if the data attribute contains a parent class.
+		 *
+		 * @returns {undefined} void
+		 */
+		const maybeSetLoadedClass = () => {
+			if ( this.image.getAttribute( 'data-lazy-load-target' ) ) {
+				this.image.closest( this.image.getAttribute( 'data-lazy-load-target' ) ).classList.add( 'image-loaded' );
+			}
+		};
 
 		if ( startTime === 0 ) {
 			this.startTime = performance.now();
@@ -129,6 +139,8 @@ class LazyLoad {
 
 		// If the image loads in less than 35ms we assumed it's been viewed already and load it quickly.
 		if ( performance.now() - this.startTime <= 35 ) {
+
+			maybeSetLoadedClass();
 
 			if ( this.instance && this.instance.startAnimation ) {
 				this.instance.startAnimation();
@@ -140,6 +152,8 @@ class LazyLoad {
 		}
 
 		await this.delay( 100 );
+
+		maybeSetLoadedClass();
 
 		if ( this.instance && this.instance.startAnimation ) {
 			this.instance.startAnimation();
@@ -172,11 +186,13 @@ class LazyLoad {
 
 		// Lazy load images.
 		this.observer = new IntersectionObserver( ( entries, observer ) => {
-			entries.forEach( ( entry ) => {
-				if ( entry.isIntersecting ) {
-					const image = entry.target;
-					const startTime = performance.now();
 
+			entries.forEach( ( entry ) => {
+
+				if ( entry.isIntersecting ) {
+
+					const image = this.image;
+					const startTime = performance.now();
 					image.addEventListener( 'load', () => this.onImageLoad( image, this.placeholder, startTime ) );
 					image.src = image.dataset.src;
 
@@ -191,7 +207,11 @@ class LazyLoad {
 			threshold: 0.75,
 		} );
 
-		this.observer.observe( this.image );
+		const target = this.image.getAttribute( 'data-lazy-load-target' )
+			? this.image.closest( this.image.getAttribute( 'data-lazy-load-target' ) )
+			: this.image;
+
+		this.observer.observe( target );
 	}
 
 	/**
@@ -225,9 +245,11 @@ class LazyLoad {
 	}
 }
 
-export default /**
-eeeeeeeeeeeeeee *
-eeeeeeeeeeeeeee */
-() => document.addEventListener( 'DOMContentLoaded', () => {
+/**
+ * Loads all lazy loaded images.
+ *
+ * @returns {undefined} void
+ */
+export default () => document.addEventListener( 'DOMContentLoaded', () => {
 	document.querySelectorAll( '[data-lazy-load]' ).forEach( ( image ) => new LazyLoad( image ) );
 } );

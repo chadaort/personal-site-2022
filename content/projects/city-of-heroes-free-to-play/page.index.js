@@ -1,6 +1,7 @@
+const config = require( '../../../config' );
 const pageHandler = require( '../../../inc/page' );
 
-const assetNamespace = 'city-of-heroes-free-to-play';
+const namespace = 'city-of-heroes-free-to-play';
 
 module.exports = {
 	post: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	meta: {
 		subtitle: 'Launches free to play',
-		imageNamespace: assetNamespace,
+		imageNamespace: namespace,
 		featureImageSet: [
 			{
 				alt: 'City of Heroes screen 1',
@@ -27,6 +28,32 @@ module.exports = {
 		],
 		projectStillActive: false,
 		anchorText: 'Read more about <span>converting City of Heroes to free to play<span>',
+		projectLink: `
+			<article class="page-link page-link--wide-image project-${ namespace }">
+				<a class="page-link__a" href="${ config.siteUrl }/projects/${ namespace }/">
+
+					<div class="page-link__image-wrapper">
+						<img
+							class="page-link__image"
+							src="/assets/images/project/${ namespace }/${ namespace }--16x9.png?placeholder=true%26injectPlaceholder=true%26placeholderSize=500"
+							data-src="/assets/images/project/${ namespace }/${ namespace }--16x9.png?size=1200"
+							data-srcset="/assets/images/project/${ namespace }/${ namespace }--16x9.png?size=480 480w,
+								/assets/images/project/${ namespace }/${ namespace }--16x9.png?size=700 700w,
+								/assets/images/project/${ namespace }/${ namespace }--16x9.png?size=900 900w,
+								/assets/images/project/${ namespace }/${ namespace }--16x9.png?size=1200 1200w"
+							alt="City of Heroes free to play"
+							data-lazy-load-target=".page-link"
+							data-lazy-load />
+					</div>
+
+					<div class="page-link__copy">
+						<h3 class="page-link__title-type">Free to Play</h3>
+						<h2 class="page-link__title" data-title="City of Heroes">City of Heroes</h2>
+					</div>
+
+				</a>
+			</article>
+		`,
 	},
 	filters: {
 		sidebarData: ( data, siteMap ) => pageHandler.getPostsByType( 'project', siteMap, 2, 'random' ),
