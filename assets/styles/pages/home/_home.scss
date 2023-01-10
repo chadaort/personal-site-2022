@@ -253,6 +253,9 @@
 .feature-custom-build__copy {
 	margin-top: .5em;
 	position: relative;
+	color: var( --color__text-title-primary );
+	font-size: 1.25em;
+	line-height: 1.4;
 
 	&::after {
 		content: '';
